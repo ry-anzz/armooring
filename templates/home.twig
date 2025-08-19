@@ -1,0 +1,42 @@
+{% extends "base.twig" %}
+
+{% block content %}
+  <!-- Hero Video colado no nav e full width -->
+<section class="relative w-full h-[800px] overflow-hidden">
+  <!-- Vídeo de fundo -->
+  <video class="absolute top-0 left-0 w-full h-full object-cover" autoplay muted loop>
+    <source src="/assets/bg.mp4" type="video/mp4">
+    Seu navegador não suporta vídeo.
+  </video>
+
+  <!-- Camada preta translúcida -->
+  <div class="absolute top-0 left-0 w-full h-full bg-black opacity-80"></div>
+
+  <!-- Conteúdo central sobre o vídeo -->
+  <div class="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">
+    <h1 class="text-white text-4xl sm:text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg leading-tight">
+      Soluções Inteligentes para o Setor Naval e Offshore
+    </h1>
+    <p class="text-white text-lg sm:text-xl md:text-2xl max-w-3xl drop-shadow-md leading-relaxed">
+      Equipamentos e serviços para ancoragem, içamento de cargas e operações técnicas. 
+      Atendimento confiável para demandas offshore e portuárias.
+    </p>
+    <!-- Botão opcional -->
+    <a href="#contato" class="mt-8 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition">
+      Saiba Mais
+    </a>
+  </div>
+
+  <!-- Onda fluida e repetida no bottom -->
+  <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] h-40">
+    <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+      <path fill="#ffffff" fill-opacity="1" d="M0,160 C360,80 1080,240 1440,160 L1440,320 L0,320 Z"></path>
+    </svg>
+  </div>
+</section>
+
+  <!-- Conteúdo da página -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  
+  </main>
+{% endblock %}
