@@ -11,10 +11,12 @@
 <body class="bg-white text-gray-900">
 
     {% include 'includes/nav.twig' %}
+   
+
 
     <main>
         {% block content %}{% endblock %}
     </main>
-
+ {% include 'includes/footer.twig' %}
 </body>
 </html>
