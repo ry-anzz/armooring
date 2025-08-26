@@ -16,4 +16,12 @@ $app->get('/', function ($request, $response, $args) use ($twig) {
     return $twig->render($response, 'home.twig');
 });
 
+$app->get('/sobre', function ($request, $response, $args) use ($twig) {
+    return $twig->render($response, 'sobre.twig');
+});
+
+$app->get('/servicos', function ($request, $response, $args) use ($twig) {
+    return $twig->render($response, 'servicos.twig');
+});
+
 $app->run();

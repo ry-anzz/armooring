@@ -1,0 +1,51 @@
+{% extends "base.twig" %}
+
+{% block title %}Serviços – AR Mooring Solutions{% endblock %}
+
+{% block content %}
+<section class="relative bg-gray-50">
+
+  {# HERO #}
+  <div class="w-full bg-[#00151a] text-white py-16 sm:py-24">
+    <div class="max-w-6xl mx-auto px-6 sm:px-12 lg:px-24 text-center" data-aos="fade-up">
+      <h2 class="text-3xl lg:text-5xl font-bold mb-6 uppercase tracking-wide">
+        Nossos Serviços
+      </h2>
+      <p class="max-w-3xl mx-auto text-lg leading-relaxed text-gray-200">
+        Atuamos no setor naval oferecendo soluções completas em 
+        <strong>engenharia, caldeiraria e apoio marítimo</strong>.  
+        Nossos serviços garantem qualidade, segurança e eficiência em todas as etapas das operações.
+      </p>
+    </div>
+  </div>
+
+  {# LISTA DE SERVIÇOS #}
+  <div class="max-w-8xl mx-auto px-6 sm:px-12 lg:px-24 py-16 grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+    {% set servicos = [
+      {'icon': 'fa-solid fa-wrench', 'title': 'Engenharia & Caldeiraria', 'desc': 'Reparos e construção naval sob medida para embarcações de diferentes portes.'},
+      {'icon': 'fa-solid fa-anchor', 'title': 'Ancoragem & Planos', 'desc': 'Ancoragem em águas abrigadas e elaboração de planos conforme NPCP.'},
+      {'icon': 'fa-solid fa-droplet', 'title': 'Hidrojateamento & Pintura', 'desc': 'Proteção contra corrosão e desgaste, garantindo durabilidade às embarcações.'},
+      {'icon': 'fa-solid fa-ship', 'title': 'Afretamento de Embarcações', 'desc': 'Disponibilização de cábrea e tripulação qualificada para diversas operações.'},
+      {'icon': 'fa-solid fa-water', 'title': 'Serviços de Mergulho', 'desc': 'Operações rasas e profundas, como limpeza de casco e retirada de thrusters.'},
+      {'icon': 'fa-solid fa-link', 'title': 'Cabos de Aço', 'desc': 'Fornecimento, lançamento e ancoragem de cabos de aço para operações marítimas.'},
+      {'icon': 'fa-solid fa-gear', 'title': 'Manutenção de Motogeradores', 'desc': 'Manutenção preventiva e corretiva em motogeradores a diesel.'},
+      {'icon': 'fa-solid fa-users', 'title': 'Mão de Obra Qualificada', 'desc': 'Terceirização de profissionais especializados para operações navais e portuárias.'},
+      {'icon': 'fa-solid fa-compass', 'title': 'Afretamento Portuário', 'desc': 'Embarcações de apoio para manobras e stand-by em operações portuárias.'},
+      {'icon': 'fa-solid fa-clipboard-check', 'title': 'Auditorias Internas', 'desc': 'Auditorias ISM / ISPS conforme normas internacionais.'},
+      {'icon': 'fa-solid fa-box', 'title': 'Equipamentos Navais', 'desc': 'Venda e aluguel de equipamentos para diferentes operações marítimas.'},
+      {'icon': 'fa-solid fa-chart-line', 'title': 'Testes de Búricas', 'desc': 'Serviços especializados para garantir eficiência e segurança operacional.'}
+    ] %}
+
+    {% for servico in servicos %}
+      <div class="bg-white rounded-xl p-6 transition-all hover:shadow-[0_8px_30px_rgba(0,80,256,0.7)]" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
+        <i class="{{ servico.icon }} text-2xl mb-3 text-[#00151a]"></i>
+        <h3 class="font-semibold text-gray-900 mb-1">{{ servico.title }}</h3>
+        <p class="text-gray-600 text-sm">{{ servico.desc }}</p>
+      </div>
+    {% endfor %}
+
+  </div>
+
+</section>
+{% endblock %}

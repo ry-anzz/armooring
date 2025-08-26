@@ -9,18 +9,17 @@
 
       <!-- Links desktop -->
       <div class="hidden md:flex space-x-10">
-        <a href="#" class="hover:text-blue-400 text-xl py-6 font-medium border-b-2 border-transparent hover:border-blue-400 whitespace-nowrap transition-all">Home</a>
-        <a href="#" class="hover:text-blue-400 text-xl py-6 font-medium border-b-2 border-transparent hover:border-blue-400 whitespace-nowrap transition-all">Quem Somos</a>
-        <a href="#" class="hover:text-blue-400 text-xl py-6 font-medium border-b-2 border-transparent hover:border-blue-400 whitespace-nowrap transition-all">Serviços</a>
-        <a href="#" class="hover:text-blue-400 text-xl py-6 font-medium border-b-2 border-transparent hover:border-blue-400 whitespace-nowrap transition-all">Produtos</a>
-        <a href="#" class="hover:text-blue-400 text-xl py-6 font-medium border-b-2 border-transparent hover:border-blue-400 whitespace-nowrap transition-all">Notícias</a>
-        <a href="#" class="hover:text-blue-400 text-xl py-6 font-medium border-b-2 border-transparent hover:border-blue-400 whitespace-nowrap transition-all">Trabalhe Conosco</a>
-         <!-- Contato com fundo azul diferente + ícone -->
-        <a href="#" class="flex items-center bg-blue-600 px-4  rounded hover:bg-blue-700 transition ml-4 text-white text-xl">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.95.68l1.05 3.16a1 1 0 01-.21 1.09L8.21 9.21a16.06 16.06 0 006.59 6.59l1.27-1.27a1 1 0 011.09-.21l3.16 1.05a1 1 0 01.68.95V19a2 2 0 01-2 2h-1C8.82 21 3 15.18 3 9V5z" />
-  </svg>
-         Ouvidoria
+        <a href="/" class="nav-link text-xl py-6 font-medium border-b-2 border-transparent whitespace-nowrap transition-all hover:border-blue-400 hover:text-blue-400">Home</a>
+        <a href="/sobre" class="nav-link text-xl py-6 font-medium border-b-2 border-transparent whitespace-nowrap transition-all hover:border-blue-400 hover:text-blue-400">Quem Somos</a>
+        <a href="/servicos" class="nav-link text-xl py-6 font-medium border-b-2 border-transparent whitespace-nowrap transition-all hover:border-blue-400 hover:text-blue-400">Serviços</a>
+        <a href="/produtos" class="nav-link text-xl py-6 font-medium border-b-2 border-transparent whitespace-nowrap transition-all hover:border-blue-400 hover:text-blue-400">Produtos</a>
+        <a href="/noticias" class="nav-link text-xl py-6 font-medium border-b-2 border-transparent whitespace-nowrap transition-all hover:border-blue-400 hover:text-blue-400">Notícias</a>
+        <a href="/trabalhe" class="nav-link text-xl py-6 font-medium border-b-2 border-transparent whitespace-nowrap transition-all hover:border-blue-400 hover:text-blue-400">Trabalhe Conosco</a>
+        <a href="/ouvidoria" class="flex items-center bg-blue-600 px-4 rounded hover:bg-blue-700 transition ml-4 text-white text-xl">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.95.68l1.05 3.16a1 1 0 01-.21 1.09L8.21 9.21a16.06 16.06 0 006.59 6.59l1.27-1.27a1 1 0 011.09-.21l3.16 1.05a1 1 0 01.68.95V19a2 2 0 01-2 2h-1C8.82 21 3 15.18 3 9V5z" />
+          </svg>
+          Ouvidoria
         </a>
       </div>
 
@@ -37,17 +36,16 @@
     </div>
   </div>
 
-  <!-- Menu mobile com animação -->
+  <!-- Menu mobile -->
   <div id="mobile-menu" class="md:hidden overflow-hidden max-h-0 transition-all duration-300">
     <div class="flex flex-col px-4 py-2 space-y-1 bg-[#003744]">
-      <a href="#" class="block px-3 py-2 rounded hover:bg-[#005b72] transition">Home</a>
-      <a href="#" class="block px-3 py-2 rounded hover:bg-[#005b72] transition">Quem Somos</a>
-      <a href="#" class="block px-3 py-2 rounded hover:bg-[#005b72] transition">Serviços</a>
-      <a href="#" class="block px-3 py-2 rounded hover:bg-[#005b72] transition">Produtos</a>
-      <a href="#" class="block px-3 py-2 rounded hover:bg-[#005b72] transition">Notícias</a>
-      <a href="#" class="flex items-center px-3 py-2 rounded bg-blue-600 hover:bg-blue-700 transition">Contato</a>
-      <a href="#" class="block px-3 py-2 rounded hover:bg-[#005b72] transition">Trabalhe Conosco</a>
-      <a href="#" class="block px-3 py-2 rounded hover:bg-[#005b72] transition">Ouvidoria</a>
+      <a href="/" class="nav-link block px-3 py-2 rounded hover:bg-[#005b72] transition">Home</a>
+      <a href="/sobre" class="nav-link block px-3 py-2 rounded hover:bg-[#005b72] transition">Quem Somos</a>
+      <a href="/servicos" class="nav-link block px-3 py-2 rounded hover:bg-[#005b72] transition">Serviços</a>
+      <a href="/produtos" class="nav-link block px-3 py-2 rounded hover:bg-[#005b72] transition">Produtos</a>
+      <a href="/noticias" class="nav-link block px-3 py-2 rounded hover:bg-[#005b72] transition">Notícias</a>
+      <a href="/trabalhe" class="nav-link block px-3 py-2 rounded hover:bg-[#005b72] transition">Trabalhe Conosco</a>
+      <a href="/ouvidoria" class="block px-3 py-2 rounded bg-blue-600 hover:bg-blue-700 transition flex items-center">Ouvidoria</a>
     </div>
   </div>
 </nav>
@@ -70,7 +68,14 @@
       menu.style.maxHeight = '0';
     });
   });
+
+  // Sublinhado automático do link ativo
+  document.querySelectorAll('nav .nav-link').forEach(link => {
+    if (window.location.pathname === '/' && link.getAttribute('href') === '/') {
+      link.classList.add('border-blue-400','text-blue-400');
+    } 
+    if(link.href === window.location.href){
+      link.classList.add('border-blue-400','text-blue-400');
+    }
+  });
 </script>
-
-
-

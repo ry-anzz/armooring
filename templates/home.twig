@@ -1,245 +1,246 @@
 {% extends "base.twig" %}
+{% block title %}Home – AR Mooring Solutions{% endblock %}
 {% block content %}
-<!-- Hero Video colado no nav e full width -->
-<section class="relative w-full h-[1200px]">
-  <!-- Vídeo de fundo -->
-  <video class="absolute top-0 left-0 w-full h-full object-cover" autoplay muted loop>
-    <source src="/assets/bg.mp4" type="video/mp4">
-    Seu navegador não suporta vídeo.
-  </video>
+  <!-- Hero Video colado no nav e full width -->
+  <section class="relative w-full h-[1200px]">
+    <!-- Vídeo de fundo -->
+    <video class="absolute top-0 left-0 w-full h-full object-cover" autoplay muted loop>
+      <source src="/assets/bg.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo.
+    </video>
 
-  <!-- Camada preta translúcida -->
-  <div class="absolute top-0 left-0 w-full h-full bg-black opacity-70"></div>
+    <!-- Camada preta translúcida -->
+    <div class="absolute top-0 left-0 w-full h-full bg-black opacity-70"></div>
 
-  <!-- Caixa branca com textos -->
-  <div class="relative z-10 items-center justify-start h-full pt-48 px-20" data-aos="fade-up">
-    <div class="bg-white/90 backdrop-blur-md rounded-xl shadow-2xl p-8 sm:p-12 max-w-3xl text-center">
-      <h1 class="text-gray-900 text-5xl sm:text-5xl font-bold mb-6 leading-tight">
-        Soluções Inteligentes para o Setor Naval e Offshore
-      </h1>
+    <!-- Caixa branca com textos -->
+    <div class="relative z-10 items-center justify-start h-full pt-48 px-20" data-aos="fade-up">
+      <div class="bg-white/90 backdrop-blur-md rounded-xl shadow-2xl p-8 sm:p-12 max-w-3xl text-center">
+        <h1 class="text-gray-900 text-5xl sm:text-5xl font-bold mb-6 leading-tight">
+          Soluções Inteligentes para o Setor Naval e Offshore
+        </h1>
 
-      <!-- Divisor corrente -->
-      <div class="flex justify-center mb-8" data-aos="fade-up">
-        <img src="/assets/corda.png" alt="Corrente naval" class="mx-auto">
-      </div>
-
-      <p class="text-gray-700 text-2xl sm:text-2  xl leading-relaxed mb-6">
-        Equipamentos e serviços para ancoragem, içamento de cargas e operações técnicas. Atendimento confiável para demandas offshore e portuárias.
-      </p>
-
-      <a href="#contato" class="mt-4 inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition">
-        Saiba Mais
-      </a>
-    </div>
-
-    <!-- Cards extras -->
-    <div class="w-full max-w-6xl mx-auto flex items-start gap-12" data-aos="fade-up">
-      <div class="w-full flex flex-wrap justify-center gap-6 mt-64 z-10 bg-white pt-8">
-
-        <!-- Card 1 -->
-        <div class="group bg-white z-10 backdrop-blur-md rounded-xl p-6 text-center flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_30px_rgba(0,80,256,0.7)] w-80" data-aos="fade-up">
-           <i class="fas fa-anchor text-blue-400 text-4xl mx-auto mb-4"></i>
-          <div>
-            <h3 class="text-xl font-bold text-gray-900 mb-3 transition group-hover:text-blue-700">Locação de Equipamentos Navais</h3>
-            <p class="text-gray-700 mb-6 transition group-hover:text-gray-900">Tecnologia e disponibilidade para operações offshore.</p>
-          </div>
-          <a href="#" class="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition group-hover:scale-105">Confira</a>
+        <!-- Divisor corrente -->
+        <div class="flex justify-center mb-8" data-aos="fade-up">
+          <img src="/assets/corda.png" alt="Corrente naval" class="mx-auto">
         </div>
 
-        <!-- Card 2 -->
-        <div class="group bg-white/90 backdrop-blur-md rounded-xl p-6 text-center flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_30px_rgba(0,80,256,0.7)] w-80" data-aos="fade-up">
-          <i class="fas fa-water text-blue-400 text-4xl mx-auto mb-4"></i>
-          <div>
-            <h3 class="text-xl font-bold text-gray-900 mb-3 transition group-hover:text-blue-700">Serviços de Mergulho Técnico</h3>
-            <p class="text-gray-700 mb-6 transition group-hover:text-gray-900">Mergulho técnico especializado para operações complexas.</p>
+        <p class="text-gray-700 text-2xl sm:text-2  xl leading-relaxed mb-6">
+          Equipamentos e serviços para ancoragem, içamento de cargas e operações técnicas. Atendimento confiável para demandas offshore e portuárias.
+        </p>
+
+        <a href="#contato" class="mt-4 inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition">
+          Saiba Mais
+        </a>
+      </div>
+
+      <!-- Cards extras -->
+      <div class="w-full max-w-6xl mx-auto flex items-start gap-12" data-aos="fade-up">
+        <div class="w-full flex flex-wrap justify-center gap-6 mt-64 z-10 bg-white pt-8">
+
+          <!-- Card 1 -->
+          <div class="group bg-white z-10 backdrop-blur-md rounded-xl p-6 text-center flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_30px_rgba(0,80,256,0.7)] w-80" data-aos="fade-up">
+            <i class="fas fa-anchor text-blue-400 text-4xl mx-auto mb-4"></i>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3 transition group-hover:text-blue-700">Locação de Equipamentos Navais</h3>
+              <p class="text-gray-700 mb-6 transition group-hover:text-gray-900">Tecnologia e disponibilidade para operações offshore.</p>
+            </div>
+            <a href="#" class="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition group-hover:scale-105">Confira</a>
           </div>
-          <a href="#" class="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition group-hover:scale-105">Confira</a>
-        </div>
 
-        <!-- Card 3 -->
-<div class="group bg-white/90 backdrop-blur-md rounded-xl p-6 text-center flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_30px_rgba(0,80,256,0.7)] w-80" data-aos="fade-up">
-  <i class="fas fa-ship text-blue-400 text-4xl mx-auto mb-4"></i>
-  <div>
-    <h3 class="text-xl font-bold text-gray-900 mb-3 transition group-hover:text-blue-700">Locação de Equipamentos Navais</h3>
-    <p class="text-gray-700 mb-6 transition group-hover:text-gray-900">Tecnologia e disponibilidade para operações offshore.</p>
+          <!-- Card 2 -->
+          <div class="group bg-white/90 backdrop-blur-md rounded-xl p-6 text-center flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_30px_rgba(0,80,256,0.7)] w-80" data-aos="fade-up">
+            <i class="fas fa-water text-blue-400 text-4xl mx-auto mb-4"></i>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3 transition group-hover:text-blue-700">Serviços de Mergulho Técnico</h3>
+              <p class="text-gray-700 mb-6 transition group-hover:text-gray-900">Mergulho técnico especializado para operações complexas.</p>
+            </div>
+            <a href="#" class="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition group-hover:scale-105">Confira</a>
+          </div>
+
+          <!-- Card 3 -->
+  <div class="group bg-white/90 backdrop-blur-md rounded-xl p-6 text-center flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_30px_rgba(0,80,256,0.7)] w-80" data-aos="fade-up">
+    <i class="fas fa-ship text-blue-400 text-4xl mx-auto mb-4"></i>
+    <div>
+      <h3 class="text-xl font-bold text-gray-900 mb-3 transition group-hover:text-blue-700">Locação de Equipamentos Navais</h3>
+      <p class="text-gray-700 mb-6 transition group-hover:text-gray-900">Tecnologia e disponibilidade para operações offshore.</p>
+    </div>
+    <a href="#" class="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition group-hove                                                                             r:scale-105">Confira</a>
   </div>
-  <a href="#" class="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition group-hove                                                                             r:scale-105">Confira</a>
-</div>
 
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Onda fluida no bottom -->
-  <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] h-40">
+    <!-- Onda fluida no bottom -->
+    <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] h-40">
+      <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="#ffffff" fill-opacity="1" d="M0,160 C360,80 1080,240 1440,160 L1440,320 L0,320 Z"></path>
+      </svg>
+    </div>
+  </section>
+
+  <main class="mx-auto sm:px-6 lg:px-8">
+  <!-- Seção Sobre Nós -->
+  <!-- Seção Sobre Nós -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-[300px]" data-aos="fade-up">
+    <div class="bg-[#00151a] backdrop-blur-md rounded-xl p-8 sm:p-12 flex flex-col lg:flex-row items-center gap-12">
+      
+      <!-- Lado esquerdo: texto -->
+      <div class="lg:w-1/2 text-left" >
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">Sobre a <span class="bg-white text-[#00151a] p-2">AR Mooring</span></h2>
+        <p class="text-white text-lg sm:text-xl leading-relaxed mb-6">
+          Fundada em 2017 em Macaé (RJ), a A.R. Mooring Solutions atua 24 horas no mercado offshore, oferecendo locação, venda e manutenção de equipamentos para ancoragem, elevação de cargas e soluções navais. Com perfil inovador e parcerias estratégicas, mantém estoque de produtos de alta qualidade, prontos para atender às demandas mais exigentes com agilidade e segurança.
+        </p>
+        <a href="/sobre-nos" class="mt-4 inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition">
+          Saber Mais
+        </a>
+      </div>
+
+      <!-- Lado direito -->
+      <div class="rounded-xl p-10 ">
+        <img src="/assets/fotos_home.png" alt="fotos" class="w-[500px] h-[500px] transition-transform duration-500 ease-in-out hover:scale-105  ">
+      </div>
+
+    </div>
+
+  </section>
+
+  <div class="absolute left-0 w-full overflow-hidden leading-[0] h-50"data-aos="fade-up">
     <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
-      <path fill="#ffffff" fill-opacity="1" d="M0,160 C360,80 1080,240 1440,160 L1440,320 L0,320 Z"></path>
+      <path fill="#00151a" fill-opacity="1" d="M0,160 C360,80 1080,240 1440,160 L1440,320 L0,320 Z">
+        <!-- Animação da onda -->
+        <animate 
+          attributeName="d" 
+          dur="5s" 
+        
+          values="
+            M0,160 C360,80 1080,240 1440,160 L1440,320 L0,320 Z;
+            M0,180 C400,120 1040,200 1440,180 L1440,320 L0,320 Z;
+            M0,140 C320,100 1000,260 1440,140 L1440,320 L0,320 Z;
+            M0,160 C360,80 1080,240 1440,160 L1440,320 L0,320 Z
+          " 
+        />
+      </path>
     </svg>
   </div>
-</section>
 
-<main class="mx-auto sm:px-6 lg:px-8">
-<!-- Seção Sobre Nós -->
-<!-- Seção Sobre Nós -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-[300px]" data-aos="fade-up">
-  <div class="bg-[#00151a] backdrop-blur-md rounded-xl p-8 sm:p-12 flex flex-col lg:flex-row items-center gap-12">
+  <!-- Seção Produtos -->
+  <section class="z-10 mx-auto sm:px-6 lg:px-8 py-20 mt-[450px]" data-aos="fade-up">
+    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900  ">Nossos Produtos</h2>
     
-    <!-- Lado esquerdo: texto -->
-    <div class="lg:w-1/2 text-left" >
-      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">Sobre a <span class="bg-white text-[#00151a] p-2">AR Mooring</span></h2>
-      <p class="text-white text-lg sm:text-xl leading-relaxed mb-6">
-        Fundada em 2017 em Macaé (RJ), a A.R. Mooring Solutions atua 24 horas no mercado offshore, oferecendo locação, venda e manutenção de equipamentos para ancoragem, elevação de cargas e soluções navais. Com perfil inovador e parcerias estratégicas, mantém estoque de produtos de alta qualidade, prontos para atender às demandas mais exigentes com agilidade e segurança.
-      </p>
-      <a href="/sobre-nos" class="mt-4 inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition">
-        Saber Mais
+          <img src="/assets/corda.png" alt="Corrente naval" class="w-[350px] h-[50px]">
+
+
+    <!-- Grid mais estreito -->
+    <div class="max-w-8xl mx-auto grid grid-cols-1 sm:grid-cols-2 p-12 rounded-xl lg:grid-cols-3 gap-8 bg-[#F8F8FF]">
+      {% set cards = [
+        {'title': 'Âncoras e Amarras', 'desc': 'Essenciais para ancoragem de embarcações em operações offshore.', 'img': '/assets/soldagem.png'},
+        {'title': 'Cabos de Aço e Destorcedores', 'desc': 'Fundamentais para segurança e tração em manobras e içamentos.', 'img': '/assets/cabo_de_aco.jpg'},
+        {'title': 'Eslingas e Patescas para Elevação de Cargas', 'desc': 'Para movimentação de cargas pesadas no ambiente marítimo.', 'img': '/assets/eslinga.png'},
+        {'title': 'Baleeiras e Botes de Resgate', 'desc': 'Equipamentos críticos de salvatagem exigidos em operações offshore.', 'img': '/assets/baleeira.png'},
+        {'title': 'Balsas Salva-Vidas e Acessórios de Emergência', 'desc': 'Para atender normas de segurança marítima.', 'img': '/assets/salva_vidas.png'},
+        {'title': 'Cabos Náuticos (Poliéster, Nylon e Polipropileno)', 'desc': 'TUtilizados em atracação e manobras de embarcações.', 'img': '/assets/cabo.png'}
+      ] %}
+
+    {% for card in cards %}
+      <div class="relative h-64 rounded-lg border-1 border-black shadow-lg shadow-black overflow-hidden group cursor-pointer">
+      
+      <!-- Imagem de fundo -->
+      <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('{{ card.img }}')"></div>
+
+      <!-- Overlay com título e descrição -->
+      <div class="absolute bottom-0 w-full bg-black/50 text-white text-center transition-all duration-500 flex flex-col justify-end 
+                  group-hover:bg-black/70 group-hover:pt-10 group-hover:pb-12 pt-2 pb-2">
+        <h3 class="text-lg mt-8 font-bold transition-all duration-500">{{ card.title }}</h3>
+        <p class="mt-2 text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500">{{ card.desc }}</p>
+      </div>
+    </div>
+  {% endfor %}
+
+    </div>
+
+    <!-- Botão Ver Todos os Produtos -->
+    <div class="mt-6 text-right">
+      <a href="/produtos" class="inline-block px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition">
+        Ver Todos os Produtos
       </a>
     </div>
+  </section>
 
-    <!-- Lado direito -->
-    <div class="rounded-xl p-10 ">
-      <img src="/assets/fotos_home.png" alt="fotos" class="w-[500px] h-[500px] transition-transform duration-500 ease-in-out hover:scale-105  ">
-    </div>
+  <!-- Seção Serviços -->
+  <section class="z-10 mx-auto sm:px-6 lg:px-8 py-20 mt-[150px]" data-aos="fade-up">
+    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900  ">Nossos Serviços</h2>
+    
+          <img src="/assets/corda.png" alt="Corrente naval" class="w-[350px] h-[50px]">
 
-  </div>
 
-</section>
+    <!-- Grid mais estreito -->
+    <div class="max-w-8xl mx-auto grid grid-cols-1 sm:grid-cols-2 p-12 rounded-xl lg:grid-cols-3 gap-8 bg-[#F8F8FF]">
+      {% set cards = [
+        {'title': 'Serviço de Mergulho', 'desc': 'Essenciais para ancoragem de embarcações em operações offshore.Serviço de mergulho raso e profundo, incluindo limpeza de casco e retirada de thruster.', 'img': '/assets/mergulho.png'},
+        {'title': '
+  Ancoragem de Embarcações', 'desc': 'Ancoragem de embarcações em águas abrigadas e elaboração de planos para atendimento a NPCP das Capitanias dos Portos Litorâneas.', 'img': '/assets/ancora.png'},
+        {'title': 'Engenharia e Caldeiraria Naval', 'desc': 'Serviços de engenharia e caldeiraria para reparos e construção naval.', 'img': '/assets/soldagem.png'},
+      ] %}
 
-<div class="absolute left-0 w-full overflow-hidden leading-[0] h-50"data-aos="fade-up">
-  <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
-    <path fill="#00151a" fill-opacity="1" d="M0,160 C360,80 1080,240 1440,160 L1440,320 L0,320 Z">
-      <!-- Animação da onda -->
-      <animate 
-        attributeName="d" 
-        dur="5s" 
+    {% for card in cards %}
+      <div class="relative h-64 rounded-lg border-1 border-black shadow-lg shadow-black overflow-hidden group cursor-pointer">
       
-        values="
-          M0,160 C360,80 1080,240 1440,160 L1440,320 L0,320 Z;
-          M0,180 C400,120 1040,200 1440,180 L1440,320 L0,320 Z;
-          M0,140 C320,100 1000,260 1440,140 L1440,320 L0,320 Z;
-          M0,160 C360,80 1080,240 1440,160 L1440,320 L0,320 Z
-        " 
-      />
-    </path>
-  </svg>
-</div>
+      <!-- Imagem de fundo -->
+      <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('{{ card.img }}')"></div>
 
-<!-- Seção Produtos -->
-<section class="z-10 mx-auto sm:px-6 lg:px-8 py-20 mt-[450px]" data-aos="fade-up">
-  <h2 class="text-3xl sm:text-4xl font-bold text-gray-900  ">Nossos Produtos</h2>
-  
-        <img src="/assets/corda.png" alt="Corrente naval" class="w-[350px] h-[50px]">
-
-
-  <!-- Grid mais estreito -->
-  <div class="max-w-8xl mx-auto grid grid-cols-1 sm:grid-cols-2 p-12 rounded-xl lg:grid-cols-3 gap-8 bg-[#00151a]">
-    {% set cards = [
-      {'title': 'Âncoras e Amarras', 'desc': 'Essenciais para ancoragem de embarcações em operações offshore.', 'img': '/assets/soldagem.png'},
-      {'title': 'Cabos de Aço e Destorcedores', 'desc': 'Fundamentais para segurança e tração em manobras e içamentos.', 'img': '/assets/cabo_de_aco.jpg'},
-      {'title': 'Eslingas e Patescas para Elevação de Cargas', 'desc': 'Para movimentação de cargas pesadas no ambiente marítimo.', 'img': '/assets/eslinga.png'},
-      {'title': 'Baleeiras e Botes de Resgate', 'desc': 'Equipamentos críticos de salvatagem exigidos em operações offshore.', 'img': '/assets/baleeira.png'},
-      {'title': 'Balsas Salva-Vidas e Acessórios de Emergência', 'desc': 'Para atender normas de segurança marítima.', 'img': '/assets/salva_vidas.png'},
-      {'title': 'Cabos Náuticos (Poliéster, Nylon e Polipropileno)', 'desc': 'TUtilizados em atracação e manobras de embarcações.', 'img': '/assets/cabo.png'}
-    ] %}
-
-  {% for card in cards %}
-    <div class="relative h-64 rounded-lg border-1 border-black shadow-xl shadow-black overflow-hidden group cursor-pointer">
-    
-    <!-- Imagem de fundo -->
-    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('{{ card.img }}')"></div>
-
-    <!-- Overlay com título e descrição -->
-    <div class="absolute bottom-0 w-full bg-black/50 text-white text-center transition-all duration-500 flex flex-col justify-end 
-                group-hover:bg-black/70 group-hover:pt-10 group-hover:pb-12 pt-2 pb-2">
-      <h3 class="text-lg mt-8 font-bold transition-all duration-500">{{ card.title }}</h3>
-      <p class="mt-2 text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500">{{ card.desc }}</p>
+      <!-- Overlay com título e descrição -->
+      <div class="absolute bottom-0 w-full bg-black/50 text-white text-center transition-all duration-500 flex flex-col justify-end 
+                  group-hover:bg-black/70 group-hover:pt-10 group-hover:pb-12 pt-2 pb-2">
+        <h3 class="text-lg mt-8 font-bold transition-all duration-500">{{ card.title }}</h3>
+        <p class="mt-2 text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500">{{ card.desc }}</p>
+      </div>
     </div>
-  </div>
-{% endfor %}
+  {% endfor %}
 
-  </div>
-
-  <!-- Botão Ver Todos os Produtos -->
-  <div class="mt-6 text-right">
-    <a href="/produtos" class="inline-block px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition">
-      Ver Todos os Produtos
-    </a>
-  </div>
-</section>
-
-<!-- Seção Serviços -->
-<section class="z-10 mx-auto sm:px-6 lg:px-8 py-20 mt-[150px]" data-aos="fade-up">
-  <h2 class="text-3xl sm:text-4xl font-bold text-gray-900  ">Nossos Serviços</h2>
-  
-        <img src="/assets/corda.png" alt="Corrente naval" class="w-[350px] h-[50px]">
-
-
-  <!-- Grid mais estreito -->
-  <div class="max-w-8xl mx-auto grid grid-cols-1 sm:grid-cols-2 p-12 rounded-xl lg:grid-cols-3 gap-8 bg-[#00151a]">
-    {% set cards = [
-      {'title': 'Serviço de Mergulho', 'desc': 'Essenciais para ancoragem de embarcações em operações offshore.Serviço de mergulho raso e profundo, incluindo limpeza de casco e retirada de thruster.', 'img': '/assets/mergulho.png'},
-      {'title': '
-Ancoragem de Embarcações', 'desc': 'Ancoragem de embarcações em águas abrigadas e elaboração de planos para atendimento a NPCP das Capitanias dos Portos Litorâneas.', 'img': '/assets/ancora.png'},
-      {'title': 'Engenharia e Caldeiraria Naval', 'desc': 'Serviços de engenharia e caldeiraria para reparos e construção naval.', 'img': '/assets/soldagem.png'},
-    ] %}
-
-  {% for card in cards %}
-    <div class="relative h-64 rounded-lg border-1 border-black shadow-xl shadow-black overflow-hidden group cursor-pointer">
-    
-    <!-- Imagem de fundo -->
-    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('{{ card.img }}')"></div>
-
-    <!-- Overlay com título e descrição -->
-    <div class="absolute bottom-0 w-full bg-black/50 text-white text-center transition-all duration-500 flex flex-col justify-end 
-                group-hover:bg-black/70 group-hover:pt-10 group-hover:pb-12 pt-2 pb-2">
-      <h3 class="text-lg mt-8 font-bold transition-all duration-500">{{ card.title }}</h3>
-      <p class="mt-2 text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500">{{ card.desc }}</p>
-    </div>
-  </div>
-{% endfor %}
-
-  </div>
-
-  <!-- Botão Ver Todos os Produtos -->
-  <div class="mt-6 text-right">
-    <a href="/produtos" class="inline-block px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition">
-      Ver Todos os Serviços
-    </a>
-  </div>
-</section>
-
-<section class="bg-gray-50 py-16" data-aos="fade-up">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Título da seção -->
-    <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold text-gray-900">Últimas Notícias</h2>
-      <p class="mt-2 text-gray-600">Fique por dentro das últimas tendências, dicas e inovações do setor de logística. Nosso blog é sua fonte de informação para otimizar suas operações e tomar decisões mais estratégicas.</p>
     </div>
 
-    <!-- Card da notícia -->
-    <div class="grid md:grid-cols-2 gap-8 items-center">
-      <!-- Imagem -->
-      <div class="overflow-hidden rounded-xl shadow-md">
-        <img src="/assets/blog_home.jpg" alt="Notícia em destaque" class="w-full h-72 object-cover hover:scale-105 transition duration-500">
+    <!-- Botão Ver Todos os Produtos -->
+    <div class="mt-6 text-right">
+      <a href="/produtos" class="inline-block px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition">
+        Ver Todos os Serviços
+      </a>
+    </div>
+  </section>
+
+  <section class="bg-gray-50 py-16" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Título da seção -->
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900">Últimas Notícias</h2>
+        <p class="mt-2 text-gray-600">Fique por dentro das últimas tendências, dicas e inovações do setor de logística. Nosso blog é sua fonte de informação para otimizar suas operações e tomar decisões mais estratégicas.</p>
       </div>
 
-      <!-- Conteúdo -->
-      <div>
-        <h3 class="text-2xl font-bold text-gray-900 mb-4">A Importância da Manutenção Preventiva em Sistemas de Ancoragem Offshore</h3>
-        <p class="text-gray-600 mb-6">
-          No ambiente hostil do alto mar, a integridade dos sistemas de ancoragem é crucial para a segurança e...</p>
-        <a href="/blog/noticia1" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg shadow-md transition">
-          Leia mais
+      <!-- Card da notícia -->
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <!-- Imagem -->
+        <div class="overflow-hidden rounded-xl shadow-md">
+          <img src="/assets/blog_home.jpg" alt="Notícia em destaque" class="w-full h-72 object-cover hover:scale-105 transition duration-500">
+        </div>
+
+        <!-- Conteúdo -->
+        <div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">A Importância da Manutenção Preventiva em Sistemas de Ancoragem Offshore</h3>
+          <p class="text-gray-600 mb-6">
+            No ambiente hostil do alto mar, a integridade dos sistemas de ancoragem é crucial para a segurança e...</p>
+          <a href="/blog/noticia1" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg shadow-md transition">
+            Leia mais
+          </a>
+        </div>
+      </div>
+
+      <!-- Botão Ver todas -->
+      <div class="text-center mt-12">
+        <a href="/blog" class="inline-block bg-gray-800 hover:bg-gray-900 text-white px-8 py-3 rounded-lg shadow-md transition">
+          Ver todas as notícias
         </a>
       </div>
     </div>
-
-    <!-- Botão Ver todas -->
-    <div class="text-center mt-12">
-      <a href="/blog" class="inline-block bg-gray-800 hover:bg-gray-900 text-white px-8 py-3 rounded-lg shadow-md transition">
-        Ver todas as notícias
-      </a>
-    </div>
-  </div>
-</section>
+  </section>
 </main>
 {% endblock %}
