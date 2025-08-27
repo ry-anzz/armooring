@@ -24,4 +24,8 @@ $app->get('/servicos', function ($request, $response, $args) use ($twig) {
     return $twig->render($response, 'servicos.twig');
 });
 
+$app->get('/produtos', function ($request, $response, $args) use ($twig) {
+    return $twig->render($response, 'produtos.twig');
+});
+
 $app->run();

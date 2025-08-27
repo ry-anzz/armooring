@@ -1,0 +1,104 @@
+{% extends "base.twig" %}
+
+{% block title %}Produtos – AR Mooring Solutions{% endblock %}
+
+{% block content %}
+
+<section class="relative bg-gray-50">
+
+  {# HERO #}
+  <div class="relative bg-[#00151a] text-white py-16 sm:py-24 px-6 sm:px-12 lg:px-24">
+    <div class="max-w-6xl mx-auto text-center" data-aos="fade-up">
+      <h1 class="text-3xl sm:text-5xl font-extrabold leading-tight mb-4">Produtos</h1>
+      <p class="text-base sm:text-xl leading-relaxed opacity-95">
+        Inovação e Qualidade para Suas Operações Marítimas e Logísticas
+      </p>
+    </div>
+  </div>
+
+  {# CONTEÚDO #}
+  <div class="py-16 sm:py-20 px-6 sm:px-12 lg:px-24 max-w-6xl mx-auto">
+    <div class="grid lg:grid-cols-2 gap-12 items-start">
+
+      {# Texto da esquerda #}
+      <div data-aos="fade-up">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Nossos Produtos</h2>
+        <p class="text-gray-700 leading-relaxed mb-6">
+          Na AR Mooring Solutions, oferecemos equipamentos e materiais navais que atendem
+          aos mais altos padrões de qualidade. Nosso portfólio foi desenvolvido para atender
+          tanto operações de rotina quanto situações emergenciais, sempre com foco em segurança
+          e eficiência.
+        </p>
+
+        <p class="text-gray-700 leading-relaxed">
+          Trabalhamos com fornecedores confiáveis e realizamos inspeções regulares para garantir
+          que cada produto entregue esteja em perfeitas condições de uso, pronto para enfrentar 
+          os desafios do ambiente marítimo.
+        </p>
+      </div>
+
+      {# Texto da direita #}
+      <div data-aos="fade-left">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Por que escolher nossos produtos?</h2>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          Diferente de soluções genéricas, nossos equipamentos são selecionados e projetados
+          especificamente para operações navais e portuárias, garantindo desempenho superior
+          e longa vida útil.
+        </p>
+
+        <p class="text-gray-700 leading-relaxed mb-4">
+          Além da qualidade, oferecemos suporte técnico especializado durante todo o processo,
+          desde a escolha do produto até sua aplicação no campo. Nosso objetivo é assegurar que
+          cada cliente tenha confiança total em sua operação.
+        </p>
+
+        <p class="text-gray-700 leading-relaxed">
+          Combinamos <strong>rapidez na entrega</strong>, <strong>consultoria personalizada</strong>
+          e <strong>produtos certificados</strong>, criando um diferencial competitivo para nossos
+          parceiros no setor marítimo.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  {# CARDS DE PRODUTOS #}
+  <div x-data="{ modalOpen: null }" class="py-16 sm:py-20 px-6 sm:px-12 lg:px-24 max-w-6xl mx-auto">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      {% set produtos = [
+        {'id':'produto1','img':'/assets/ancora.png','title':'Cabo de Aço Marítimo','desc':'Alta resistência para operações navais.','long':'Cabo de aço galvanizado, testado para operações marítimas pesadas. Ideal para ancoragem, içamento e rebocagem de embarcações. Garantia de durabilidade e segurança em ambientes agressivos.'},
+        {'id':'produto2','img':'/images/produto2.jpg','title':'Guincho Hidráulico','desc':'Capacidade de até 5 toneladas.','long':'Guincho hidráulico compacto e robusto, com acionamento preciso e seguro. Facilita manobras de carga, embarque e desembarque, garantindo eficiência e segurança operacional.'},
+        {'id':'produto3','img':'/images/produto3.jpg','title':'Defensas Infláveis','desc':'Proteção para atracação de navios.','long':'Defensas infláveis de alta resistência que protegem o casco das embarcações durante atracações e operações portuárias. Resistem a impactos e à exposição prolongada à água salgada.'}
+      ] %}
+
+      {% for produto in produtos %}
+        <div @click="modalOpen='{{ produto.id }}'" class="cursor-pointer bg-white rounded-xl overflow-hidden shadow-md hover:scale-105 transition-transform duration-300" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
+          <img src="{{ produto.img }}" alt="{{ produto.title }}" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="font-semibold text-gray-900 mb-1">{{ produto.title }}</h3>
+            <p class="text-gray-600 text-sm">{{ produto.desc }}</p>
+          </div>
+        </div>
+
+        {# MODAL #}
+        <div x-show="modalOpen === '{{ produto.id }}'" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50" x-transition>
+          <div class="bg-white rounded-xl max-w-lg w-full p-6 relative">
+            <button @click="modalOpen=null" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800">
+              <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <img src="{{ produto.img }}" alt="{{ produto.title }}" class="w-full h-64 object-cover rounded mb-4">
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">{{ produto.title }}</h3>
+            <p class="text-gray-700 leading-relaxed">{{ produto.long }}</p>
+          </div>
+        </div>
+
+      {% endfor %}
+    </div>
+  </div>
+  
+</section>
+
+{# Alpine.js para os modais #}
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+{% endblock %}

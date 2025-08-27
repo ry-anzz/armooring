@@ -20,32 +20,55 @@
   </div>
 
   {# LISTA DE SERVIÇOS #}
-  <div class="max-w-8xl mx-auto px-6 sm:px-12 lg:px-24 py-16 grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+  <div x-data="{ modalOpen: null }" class="max-w-8xl mx-auto px-6 sm:px-12 lg:px-24 py-16 grid sm:grid-cols-2 md:grid-cols-3 gap-6">
 
     {% set servicos = [
-      {'icon': 'fa-solid fa-wrench', 'title': 'Engenharia & Caldeiraria', 'desc': 'Reparos e construção naval sob medida para embarcações de diferentes portes.'},
-      {'icon': 'fa-solid fa-anchor', 'title': 'Ancoragem & Planos', 'desc': 'Ancoragem em águas abrigadas e elaboração de planos conforme NPCP.'},
-      {'icon': 'fa-solid fa-droplet', 'title': 'Hidrojateamento & Pintura', 'desc': 'Proteção contra corrosão e desgaste, garantindo durabilidade às embarcações.'},
-      {'icon': 'fa-solid fa-ship', 'title': 'Afretamento de Embarcações', 'desc': 'Disponibilização de cábrea e tripulação qualificada para diversas operações.'},
-      {'icon': 'fa-solid fa-water', 'title': 'Serviços de Mergulho', 'desc': 'Operações rasas e profundas, como limpeza de casco e retirada de thrusters.'},
-      {'icon': 'fa-solid fa-link', 'title': 'Cabos de Aço', 'desc': 'Fornecimento, lançamento e ancoragem de cabos de aço para operações marítimas.'},
-      {'icon': 'fa-solid fa-gear', 'title': 'Manutenção de Motogeradores', 'desc': 'Manutenção preventiva e corretiva em motogeradores a diesel.'},
-      {'icon': 'fa-solid fa-users', 'title': 'Mão de Obra Qualificada', 'desc': 'Terceirização de profissionais especializados para operações navais e portuárias.'},
-      {'icon': 'fa-solid fa-compass', 'title': 'Afretamento Portuário', 'desc': 'Embarcações de apoio para manobras e stand-by em operações portuárias.'},
-      {'icon': 'fa-solid fa-clipboard-check', 'title': 'Auditorias Internas', 'desc': 'Auditorias ISM / ISPS conforme normas internacionais.'},
-      {'icon': 'fa-solid fa-box', 'title': 'Equipamentos Navais', 'desc': 'Venda e aluguel de equipamentos para diferentes operações marítimas.'},
-      {'icon': 'fa-solid fa-chart-line', 'title': 'Testes de Búricas', 'desc': 'Serviços especializados para garantir eficiência e segurança operacional.'}
+      {'id':'engenharia','icon':'fa-solid fa-wrench','title':'Engenharia & Caldeiraria','desc':'Reparos e construção naval sob medida para embarcações de diferentes portes.','long':'Realizamos reparos estruturais e construções sob medida, empregando caldeiraria pesada e soldagem de alta qualidade. Nossa equipe segue normas técnicas rígidas para garantir durabilidade, segurança e eficiência em cada projeto, desde pequenas embarcações até grandes navios.'},
+      {'id':'ancoragem','icon':'fa-solid fa-anchor','title':'Ancoragem & Planos','desc':'Ancoragem em águas abrigadas e elaboração de planos conforme NPCP.','long':'Desenvolvemos planos de ancoragem seguindo a NPCP, assegurando total conformidade legal e segurança operacional. Nossa equipe também executa a instalação e monitoramento de ancoragens em águas abrigadas, oferecendo suporte completo em operações marítimas.'},
+      {'id':'hidrojateamento','icon':'fa-solid fa-droplet','title':'Hidrojateamento & Pintura','desc':'Proteção contra corrosão e desgaste, garantindo durabilidade às embarcações.','long':'Aplicamos hidrojateamento de alta pressão e sistemas de pintura naval que aumentam a vida útil das embarcações. Nossos serviços previnem corrosão, desgaste e reduzem custos de manutenção, sempre utilizando materiais de primeira linha.'},
+      {'id':'afretamento','icon':'fa-solid fa-ship','title':'Afretamento de Embarcações','desc':'Disponibilização de cábrea e tripulação qualificada para diversas operações.','long':'Disponibilizamos embarcações de apoio, incluindo cábrea e rebocadores, com tripulação altamente treinada. Oferecemos soluções de afretamento flexíveis, atendendo operações portuárias, offshore e de apoio logístico com segurança e pontualidade.'},
+      {'id':'mergulho','icon':'fa-solid fa-water','title':'Serviços de Mergulho','desc':'Operações rasas e profundas, como limpeza de casco e retirada de thrusters.','long':'Nossa equipe de mergulhadores profissionais realiza inspeções submarinas, limpezas de casco, retirada e instalação de peças (como thrusters) e demais serviços subaquáticos. Trabalhamos com segurança e equipamentos modernos para qualquer profundidade.'},
+      {'id':'cabos','icon':'fa-solid fa-link','title':'Cabos de Aço','desc':'Fornecimento, lançamento e ancoragem de cabos de aço para operações marítimas.','long':'Oferecemos fornecimento, lançamento e manutenção de cabos de aço de alta resistência, essenciais em operações navais e portuárias. Nossos serviços incluem testes de carga e instalação conforme padrões internacionais de segurança.'},
+      {'id':'motogeradores','icon':'fa-solid fa-gear','title':'Manutenção de Motogeradores','desc':'Manutenção preventiva e corretiva em motogeradores a diesel.','long':'Realizamos manutenção preventiva e corretiva em motogeradores a diesel, garantindo confiabilidade no fornecimento de energia. Trabalhamos com peças originais, testes de carga e atendimento emergencial 24/7.'},
+      {'id':'maoobra','icon':'fa-solid fa-users','title':'Mão de Obra Qualificada','desc':'Terceirização de profissionais especializados para operações navais e portuárias.','long':'Disponibilizamos equipes de profissionais especializados, incluindo caldeireiros, soldadores, operadores de guindaste, marinheiros e mergulhadores. Nossos colaboradores são treinados conforme as normas mais rigorosas do setor naval.'},
+      {'id':'afretamentoportuario','icon':'fa-solid fa-compass','title':'Afretamento Portuário','desc':'Embarcações de apoio para manobras e stand-by em operações portuárias.','long':'Nossas embarcações de apoio portuário são ideais para manobras, reboques leves e operações stand-by. Garantimos eficiência e segurança em ambientes de grande fluxo marítimo, atendendo demandas sob contrato ou operações pontuais.'},
+      {'id':'auditorias','icon':'fa-solid fa-clipboard-check','title':'Auditorias Internas','desc':'Auditorias ISM / ISPS conforme normas internacionais.','long':'Executamos auditorias internas ISM e ISPS em conformidade com normas internacionais de segurança marítima. Nosso time identifica não conformidades e orienta planos de ação para garantir certificações e excelência operacional.'},
+      {'id':'equipamentos','icon':'fa-solid fa-box','title':'Equipamentos Navais','desc':'Venda e aluguel de equipamentos para diferentes operações marítimas.','long':'Disponibilizamos uma ampla gama de equipamentos navais para venda e locação, incluindo cabos, defensas, guinchos, bombas e EPIs. Trabalhamos apenas com marcas reconhecidas para garantir qualidade e confiabilidade.'},
+      {'id':'buricas','icon':'fa-solid fa-chart-line','title':'Testes de Búricas','desc':'Serviços especializados para garantir eficiência e segurança operacional.','long':'Realizamos testes de búricas com equipamentos calibrados, assegurando desempenho e confiabilidade das operações marítimas. Nossa metodologia segue padrões técnicos internacionais para máxima segurança.'}
     ] %}
 
     {% for servico in servicos %}
-      <div class="bg-white rounded-xl p-6 transition-all hover:shadow-[0_8px_30px_rgba(0,80,256,0.7)]" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
-        <i class="{{ servico.icon }} text-2xl mb-3 text-[#00151a]"></i>
-        <h3 class="font-semibold text-gray-900 mb-1">{{ servico.title }}</h3>
+      <div @click="modalOpen='{{ servico.id }}'" 
+           class="group cursor-pointer bg-white rounded-xl p-6 transition-all hover:-translate-y-2 hover:shadow-[0_8px_30px_rgba(0,80,256,0.2)] relative overflow-hidden" 
+           data-aos="fade-up" 
+           data-aos-delay="{{ loop.index0 * 100 }}">
+
+        <i class="{{ servico.icon }} text-2xl mb-3 text-[#00151a] transition-transform group-hover:scale-110"></i>
+        <h3 class="font-semibold text-gray-900 mb-1 group-hover:text-[#00151a] transition-colors">
+          {{ servico.title }}
+        </h3>
         <p class="text-gray-600 text-sm">{{ servico.desc }}</p>
+
+        {# Ícone de seta para indicar clique #}
+        <i class="fa-solid fa-arrow-right absolute bottom-4 right-4 text-gray-400 group-hover:text-[#00151a] transition-transform group-hover:translate-x-1"></i>
+      </div>
+
+      {# MODAL #}
+      <div x-show="modalOpen === '{{ servico.id }}'" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50" x-transition>
+        <div class="bg-white rounded-xl max-w-lg w-full p-6 relative">
+          <button @click="modalOpen=null" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800">
+            <i class="fa-solid fa-xmark text-xl"></i>
+          </button>
+          <i class="{{ servico.icon }} text-3xl mb-4 text-[#00151a]"></i>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">{{ servico.title }}</h3>
+          <p class="text-gray-700 leading-relaxed">{{ servico.long }}</p>
+        </div>
       </div>
     {% endfor %}
 
   </div>
-
 </section>
+
+{# Importar Alpine.js para os modais funcionarem #}
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 {% endblock %}
