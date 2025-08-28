@@ -28,4 +28,12 @@ $app->get('/produtos', function ($request, $response, $args) use ($twig) {
     return $twig->render($response, 'produtos.twig');
 });
 
+$app->get('/blog', function ($request, $response, $args) use ($twig) {
+    return $twig->render($response, 'blog.twig');
+});
+
+$app->get('/post', function ($request, $response, $args) use ($twig) {
+    return $twig->render($response, 'post.twig');
+});
+
 $app->run();

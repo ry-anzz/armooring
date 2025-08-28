@@ -11,6 +11,7 @@
       <h2 class="text-3xl lg:text-5xl font-bold mb-6 uppercase tracking-wide">
         Nossos Serviços
       </h2>
+      
       <p class="max-w-3xl mx-auto text-lg leading-relaxed text-gray-200">
         Atuamos no setor naval oferecendo soluções completas em 
         <strong>engenharia, caldeiraria e apoio marítimo</strong>.  
@@ -23,47 +24,209 @@
   <div x-data="{ modalOpen: null }" class="max-w-8xl mx-auto px-6 sm:px-12 lg:px-24 py-16 grid sm:grid-cols-2 md:grid-cols-3 gap-6">
 
     {% set servicos = [
-      {'id':'engenharia','icon':'fa-solid fa-wrench','title':'Engenharia & Caldeiraria','desc':'Reparos e construção naval sob medida para embarcações de diferentes portes.','long':'Realizamos reparos estruturais e construções sob medida, empregando caldeiraria pesada e soldagem de alta qualidade. Nossa equipe segue normas técnicas rígidas para garantir durabilidade, segurança e eficiência em cada projeto, desde pequenas embarcações até grandes navios.'},
-      {'id':'ancoragem','icon':'fa-solid fa-anchor','title':'Ancoragem & Planos','desc':'Ancoragem em águas abrigadas e elaboração de planos conforme NPCP.','long':'Desenvolvemos planos de ancoragem seguindo a NPCP, assegurando total conformidade legal e segurança operacional. Nossa equipe também executa a instalação e monitoramento de ancoragens em águas abrigadas, oferecendo suporte completo em operações marítimas.'},
-      {'id':'hidrojateamento','icon':'fa-solid fa-droplet','title':'Hidrojateamento & Pintura','desc':'Proteção contra corrosão e desgaste, garantindo durabilidade às embarcações.','long':'Aplicamos hidrojateamento de alta pressão e sistemas de pintura naval que aumentam a vida útil das embarcações. Nossos serviços previnem corrosão, desgaste e reduzem custos de manutenção, sempre utilizando materiais de primeira linha.'},
-      {'id':'afretamento','icon':'fa-solid fa-ship','title':'Afretamento de Embarcações','desc':'Disponibilização de cábrea e tripulação qualificada para diversas operações.','long':'Disponibilizamos embarcações de apoio, incluindo cábrea e rebocadores, com tripulação altamente treinada. Oferecemos soluções de afretamento flexíveis, atendendo operações portuárias, offshore e de apoio logístico com segurança e pontualidade.'},
-      {'id':'mergulho','icon':'fa-solid fa-water','title':'Serviços de Mergulho','desc':'Operações rasas e profundas, como limpeza de casco e retirada de thrusters.','long':'Nossa equipe de mergulhadores profissionais realiza inspeções submarinas, limpezas de casco, retirada e instalação de peças (como thrusters) e demais serviços subaquáticos. Trabalhamos com segurança e equipamentos modernos para qualquer profundidade.'},
-      {'id':'cabos','icon':'fa-solid fa-link','title':'Cabos de Aço','desc':'Fornecimento, lançamento e ancoragem de cabos de aço para operações marítimas.','long':'Oferecemos fornecimento, lançamento e manutenção de cabos de aço de alta resistência, essenciais em operações navais e portuárias. Nossos serviços incluem testes de carga e instalação conforme padrões internacionais de segurança.'},
-      {'id':'motogeradores','icon':'fa-solid fa-gear','title':'Manutenção de Motogeradores','desc':'Manutenção preventiva e corretiva em motogeradores a diesel.','long':'Realizamos manutenção preventiva e corretiva em motogeradores a diesel, garantindo confiabilidade no fornecimento de energia. Trabalhamos com peças originais, testes de carga e atendimento emergencial 24/7.'},
-      {'id':'maoobra','icon':'fa-solid fa-users','title':'Mão de Obra Qualificada','desc':'Terceirização de profissionais especializados para operações navais e portuárias.','long':'Disponibilizamos equipes de profissionais especializados, incluindo caldeireiros, soldadores, operadores de guindaste, marinheiros e mergulhadores. Nossos colaboradores são treinados conforme as normas mais rigorosas do setor naval.'},
-      {'id':'afretamentoportuario','icon':'fa-solid fa-compass','title':'Afretamento Portuário','desc':'Embarcações de apoio para manobras e stand-by em operações portuárias.','long':'Nossas embarcações de apoio portuário são ideais para manobras, reboques leves e operações stand-by. Garantimos eficiência e segurança em ambientes de grande fluxo marítimo, atendendo demandas sob contrato ou operações pontuais.'},
-      {'id':'auditorias','icon':'fa-solid fa-clipboard-check','title':'Auditorias Internas','desc':'Auditorias ISM / ISPS conforme normas internacionais.','long':'Executamos auditorias internas ISM e ISPS em conformidade com normas internacionais de segurança marítima. Nosso time identifica não conformidades e orienta planos de ação para garantir certificações e excelência operacional.'},
-      {'id':'equipamentos','icon':'fa-solid fa-box','title':'Equipamentos Navais','desc':'Venda e aluguel de equipamentos para diferentes operações marítimas.','long':'Disponibilizamos uma ampla gama de equipamentos navais para venda e locação, incluindo cabos, defensas, guinchos, bombas e EPIs. Trabalhamos apenas com marcas reconhecidas para garantir qualidade e confiabilidade.'},
-      {'id':'buricas','icon':'fa-solid fa-chart-line','title':'Testes de Búricas','desc':'Serviços especializados para garantir eficiência e segurança operacional.','long':'Realizamos testes de búricas com equipamentos calibrados, assegurando desempenho e confiabilidade das operações marítimas. Nossa metodologia segue padrões técnicos internacionais para máxima segurança.'}
-    ] %}
+  {
+    'id':'engenharia',
+    'img':'/assets/soldagem.png',
+    'icon':'fa-solid fa-wrench',
+    'title':'Engenharia & Caldeiraria',
+    'desc':'Reparos e construção naval sob medida para embarcações de diferentes portes.',
+    'long':'Realizamos reparos estruturais e construções sob medida, empregando caldeiraria pesada e soldagem de alta qualidade. Nossa equipe segue normas técnicas rígidas para garantir durabilidade, segurança e eficiência em cada projeto, desde pequenas embarcações até grandes navios. Prestamos consultoria especializada para otimizar processos e reduzir custos operacionais.',
+      'title1':'Soldagem Especializada','desc':'Utilizamos técnicas avançadas de soldagem em aço naval.',
+      'title2':'Projetos Personalizados','desc':'Adaptamos soluções de engenharia conforme a necessidade do cliente.',
+      'title3':'Inspeção de Qualidade','desc':'Cada projeto é rigorosamente inspecionado antes da entrega.',
+      'title4':'Suporte Técnico','desc':'Oferecemos acompanhamento contínuo durante e após a execução.'
+  },
+  {
+    'id':'ancoragem',
+    'img':'/assets/ancora.png',
+    'icon':'fa-solid fa-anchor',
+    'title':'Ancoragem & Planos',
+    'desc':'Ancoragem em águas abrigadas e elaboração de planos conforme NPCP.',
+    'long':'Desenvolvemos planos de ancoragem seguindo a NPCP, garantindo total conformidade legal e segurança operacional. Instalamos e monitoramos ancoragens em águas abrigadas e profundas. Inclui treinamentos práticos para equipes e inspeções periódicas para máxima eficiência.',
+   
+      'title1':'Planejamento Completo','desc':'Estudos detalhados de posição, profundidade e segurança.',
+      'title2':'Execução Segura','desc':'Equipe treinada e equipamentos de alta qualidade.',
+      'title3':'Monitoramento Contínuo','desc':'Acompanhamento remoto e inspeções regulares.',
+      'title4':'Consultoria Técnica','desc':'Orientações para procedimentos e emergências.'
+    
+  },
+  {
+    'id':'hidrojateamento',
+    'img':'/assets/pintura.png',
+    'icon':'fa-solid fa-droplet',
+    'title':'Hidrojateamento & Pintura',
+    'desc':'Proteção contra corrosão e desgaste, garantindo durabilidade às embarcações.',
+    'long':'Aplicamos hidrojateamento de alta pressão e sistemas de pintura naval que aumentam a vida útil das embarcações. Nossos serviços previnem corrosão, desgaste e reduzem custos de manutenção, sempre utilizando materiais de primeira linha. Garantimos acabamento uniforme e aderência ideal da pintura.',
+    
+      'title1':'Hidrojateamento de Alta Pressão','desc':'Remove ferrugem, sujeira e antigas camadas de tinta.',
+      'title2':'Proteção Anticorrosiva','desc':'Pintura e revestimentos especiais para ambientes marítimos.',
+      'title3':'Redução de Custos','desc':'Manutenção preventiva para prolongar a vida útil das embarcações.',
+      'title4':'Equipe Especializada','desc':'Profissionais treinados e certificados em segurança.'
+  },
+  {
+    'id':'afretamento',
+    'img':'/assets/afretamento.png',
+    'icon':'fa-solid fa-ship',
+    'title':'Afretamento de Embarcações',
+    'desc':'Disponibilização de cábrea e tripulação qualificada para diversas operações.',
+    'long':'Oferecemos embarcações de apoio, incluindo cábrea e rebocadores, com tripulação altamente treinada. Soluções flexíveis para operações portuárias, offshore e apoio logístico, garantindo segurança, pontualidade e eficiência. Atendemos contratos permanentes ou operações pontuais com planejamento estratégico.',
+    
+      'title1':'Embarcações Modernas','desc':'Frota equipada com tecnologia de ponta.',
+      'title2':'Tripulação Treinada','desc':'Profissionais capacitados para diversas operações.',
+      'title3':'Flexibilidade de Operações','desc':'Atendemos demandas regulares ou emergenciais.',
+      'title4':'Segurança Garantida','desc':'Procedimentos rigorosos conforme normas marítimas.'
+  },
+  {
+    'id':'mergulho',
+    'img':'/assets/mergulho.png',
+    'icon':'fa-solid fa-water',
+    'title':'Serviços de Mergulho',
+    'desc':'Operações rasas e profundas, como limpeza de casco e retirada de thrusters.',
+    'long':'Equipe de mergulhadores profissionais realiza inspeções submarinas, limpezas de casco, retirada e instalação de peças (como thrusters) e demais serviços subaquáticos. Trabalhamos com equipamentos modernos e protocolos de segurança rigorosos para qualquer profundidade.',
+    
+      'title1':'Limpeza de Casco','desc':'Remoção de incrustações e manutenção preventiva.',
+      'title2':'Inspeção Submarina','desc':'Avaliação detalhada da estrutura submersa.',
+      'title3':'Instalação e Retirada de Peças','desc':'Serviços precisos de manutenção e substituição.',
+      'title4':'Segurança em Primeiro Lugar','desc':'Protocolos rigorosos para proteção da equipe e embarcação.'
+  },
+  {
+    'id':'cabos',
+    'img':'/assets/cabo.png',
+    'icon':'fa-solid fa-link',
+    'title':'Cabos de Aço',
+    'desc':'Fornecimento, lançamento e ancoragem de cabos de aço para operações marítimas.',
+    'long':'Fornecemos cabos de aço de alta resistência, essenciais em operações navais e portuárias. Inclui testes de carga, instalação e manutenção conforme padrões internacionais, garantindo segurança e confiabilidade em qualquer operação.',
+    
+      'title1':'Alta Resistência','desc':'Cabos certificados para operações marítimas críticas.',
+      'title2':'Instalação Profissional','desc':'Equipe especializada para manuseio e fixação segura.',
+      'title3':'Testes de Carga','desc':'Verificação de performance antes da operação.',
+      'title4':'Manutenção Preventiva','desc':'Garantindo longa vida útil dos cabos e segurança.'
+  },
+  {
+    'id':'motogeradores',
+    'img':'/assets/motogeradores.png',
+    'icon':'fa-solid fa-gear',
+    'title':'Manutenção de Motogeradores',
+    'desc':'Manutenção preventiva e corretiva em motogeradores a diesel.',
+    'long':'Realizamos manutenção preventiva e corretiva em motogeradores a diesel, garantindo confiabilidade no fornecimento de energia. Trabalhamos com peças originais, testes de carga e atendimento emergencial 24/7, assegurando operação contínua e sem falhas.',
+      'title1':'Preventiva e Corretiva','desc':'Evita falhas e aumenta a vida útil do equipamento.',
+      'title2':'Peças Originais','desc':'Garantia de qualidade e desempenho confiável.',
+      'title3':'Testes de Carga','desc':'Verificação completa após manutenção.',
+      'title4':'Atendimento Emergencial','desc':'Suporte disponível 24/7 em caso de falhas.'
+  },
+  {
+    'id':'maoobra',
+    'img':'/assets/maoobra.png',
+    'icon':'fa-solid fa-users',
+    'title':'Mão de Obra Qualificada',
+    'desc':'Terceirização de profissionais especializados para operações navais e portuárias.',
+    'long':'Disponibilizamos equipes especializadas, incluindo caldeireiros, soldadores, operadores de guindaste, marinheiros e mergulhadores. Nossos colaboradores são treinados conforme as normas mais rigorosas do setor naval, garantindo eficiência, segurança e qualidade em cada operação.',
+      'title1':'Equipe Especializada','desc':'Profissionais treinados e certificados.',
+      'title2':'Flexibilidade','desc':'Disponível para operações pontuais ou contínuas.',
+      'title3':'Segurança Garantida','desc':'Procedimentos rigorosos e monitoramento constante.',
+      'title4':'Qualidade Consistente','desc':'Execução precisa e conforme padrões.',
+  },
+  {
+    'id':'afretamentoportuario',
+    'img':'/assets/afretamentoportuario.png',
+    'icon':'fa-solid fa-compass',
+    'title':'Afretamento Portuário',
+    'desc':'Embarcações de apoio para manobras e stand-by em operações portuárias.',
+    'long':'Nossas embarcações de apoio portuário são ideais para manobras, reboques leves e operações stand-by. Garantimos eficiência e segurança em ambientes de grande fluxo marítimo, atendendo demandas sob contrato ou operações pontuais.',
+    
+      'title1':'Frota Adequada','desc':'Embarcações equipadas para manobras portuárias.',
+      'title2':'Operação Segura','desc':'Tripulação treinada e procedimentos padronizados.',
+      'title3':'Disponibilidade','desc':'Suporte em regime contínuo ou pontual.',
+      'title4':'Eficiência','desc':'Atendimento rápido com logística otimizada.'
+  },
+  {
+    'id':'auditorias',
+    'img':'/assets/auditorias.png',
+    'icon':'fa-solid fa-clipboard-check',
+    'title':'Auditorias Internas',
+    'desc':'Auditorias ISM / ISPS conforme normas internacionais.',
+    'long':'Executamos auditorias internas ISM e ISPS em conformidade com normas internacionais de segurança marítima. Identificamos não conformidades e elaboramos planos de ação, assegurando certificações e excelência operacional.',
+    'title1':'Conformidade Total','desc':'Auditorias alinhadas com normas ISM/ISPS.',
+    'title2':'Relatórios Detalhados','desc':'Documentação completa para cada auditoria.',
+      'title3':'Plano de Ação','desc':'Orientações para correção de não conformidades.',
+      'title4':'Suporte Contínuo','desc':'Consultoria durante todo o processo.'
+    
+  },
+  {
+    'id':'equipamentos',
+    'img':'/assets/equipamentos.png',
+    'icon':'fa-solid fa-box',
+    'title':'Equipamentos Navais',
+    'desc':'Venda e aluguel de equipamentos para diferentes operações marítimas.',
+    'long':'Disponibilizamos uma ampla gama de equipamentos navais para venda e locação, incluindo cabos, defensas, guinchos, bombas e EPIs. Trabalhamos apenas com marcas reconhecidas para garantir qualidade e confiabilidade.',
+    'title1':'Diversidade','desc':'Equipamentos variados para todas as operações.',
+    'title2':'Qualidade','desc':'Marcas reconhecidas e certificadas.',
+    'title3':'Locação e Venda','desc':'Flexibilidade de aquisição conforme necessidade.',
+    'title4':'Suporte Técnico','desc':'Orientação para operação segura e eficiente.'
+  },
+  {
+    'id':'testesburicas',
+    'img':'/assets/testesburicas.png',
+    'icon':'fa-solid fa-chart-line',
+    'title':'Testes de Búricas',
+    'desc':'Serviços especializados para garantir eficiência e segurança operacional.',
+    'long':'Realizamos testes de búricas com equipamentos calibrados, assegurando desempenho e confiabilidade das operações marítimas. Nossa metodologia segue padrões técnicos internacionais para máxima segurança e eficiência.',
+    'title1':'Equipamentos Calibrados','desc':'Precisão total nos testes de performance.',
+    'title2':'Segurança','desc':'Procedimentos para evitar riscos operacionais.',
+    'title3':'Relatórios Detalhados','desc':'Documentação completa para auditoria e análise.',
+    'title4':'Equipe Especializada','desc':'Profissionais treinados e certificados.',
+  }]
+   %}
 
-    {% for servico in servicos %}
+
+   {% for servico in servicos %}
       <div @click="modalOpen='{{ servico.id }}'" 
-           class="group cursor-pointer bg-white rounded-xl p-6 transition-all hover:-translate-y-2 hover:shadow-[0_8px_30px_rgba(0,80,256,0.2)] relative overflow-hidden" 
+           class="group cursor-pointer bg-white shadow-lg shadow-black-200 rounded-xl p-6 transition-all hover:-translate-y-2 hover:shadow-[0_8px_30px_rgba(0,80,256,0.2)] relative overflow-hidden" 
            data-aos="fade-up" 
            data-aos-delay="{{ loop.index0 * 100 }}">
-
-        <i class="{{ servico.icon }} text-2xl mb-3 text-[#00151a] transition-transform group-hover:scale-110"></i>
+            <i class="{{ servico.icon }} text-2xl mb-5 text-[#00151a] transition-transform group-hover:scale-110"></i>
+            <i class="fa-solid fa-arrow-right text-xl absolute bottom-4 right-4 text-gray-400 group-hover:text-[#00151a] transition-transform group-hover:translate-x-1"></i>
+             <img src="{{ servico.img }}" alt="{{ servico.title }}" class="w-full h-48 object-cover">
+       
         <h3 class="font-semibold text-gray-900 mb-1 group-hover:text-[#00151a] transition-colors">
           {{ servico.title }}
         </h3>
         <p class="text-gray-600 text-sm">{{ servico.desc }}</p>
-
-        {# Ícone de seta para indicar clique #}
-        <i class="fa-solid fa-arrow-right absolute bottom-4 right-4 text-gray-400 group-hover:text-[#00151a] transition-transform group-hover:translate-x-1"></i>
       </div>
 
-      {# MODAL #}
-      <div x-show="modalOpen === '{{ servico.id }}'" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50" x-transition>
-        <div class="bg-white rounded-xl max-w-lg w-full p-6 relative">
+      {# MODAL COM TEXTO MAIOR E CARDS INTERNOS #}
+      <div x-show="modalOpen === '{{ servico.id }}'" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4" x-transition>
+        <div class="bg-gray-100 rounded-xl max-w-4xl w-full p-8 relative overflow-y-auto max-h-[90vh]">
           <button @click="modalOpen=null" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800">
             <i class="fa-solid fa-xmark text-xl"></i>
           </button>
-          <i class="{{ servico.icon }} text-3xl mb-4 text-[#00151a]"></i>
-          <h3 class="text-2xl font-bold text-gray-900 mb-3">{{ servico.title }}</h3>
-          <p class="text-gray-700 leading-relaxed">{{ servico.long }}</p>
+          <img src="{{ servico.img }}" alt="{{ servico.title }}" class="w-full h-64 object-cover rounded mb-6">
+          <h3 class="text-3xl font-bold text-gray-900 mb-4">{{ servico.title }}</h3>
+          <p class="text-gray-700 leading-relaxed mb-6">{{ servico.long }}</p>
+
+          {# Cards internos #}
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="bg-white rounded-lg p-4 shadow hover:shadow-lg transition">
+              <h4 class="font-semibold text-gray-800 mb-2">Benefício 1</h4>
+              <p class="text-gray-600 text-sm">{{ servico.title1 }}</p>
+            </div>
+            <div class="bg-white rounded-lg p-4 shadow hover:shadow-lg transition">
+              <h4 class="font-semibold text-gray-800 mb-2">Benefício 2</h4>
+              <p class="text-gray-600 text-sm">{{ servico.title2 }}</p>
+            </div>
+            <div class="bg-white rounded-lg p-4 shadow hover:shadow-lg transition">
+              <h4 class="font-semibold text-gray-800 mb-2">Benefício 3</h4>
+              <p class="text-gray-600 text-sm">{{ servico.title3 }}</p>
+            </div>
+            <div class="bg-white rounded-lg p-4 shadow hover:shadow-lg transition">
+              <h4 class="font-semibold text-gray-800 mb-2">Benefício 4</h4>
+              <p class="text-gray-600 text-sm">Descrição detalhada do benefício ou {{ servico.title4 }}</p>
+            </div>
+          </div>
+
         </div>
       </div>
+
     {% endfor %}
 
   </div>
