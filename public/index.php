@@ -12,7 +12,7 @@ $twig = Twig::create(__DIR__ . '/../templates', ['cache' => false]);
 $app->add(TwigMiddleware::create($app, $twig));
 
 // Rota
-$app->get('/', function ($request, $response, $args) use ($twig) {
+$app->get('/home', function ($request, $response, $args) use ($twig) {
     return $twig->render($response, 'home.twig');
 });
 

@@ -3,7 +3,6 @@
 {% block title %}Produtos – AR Mooring Solutions{% endblock %}
 
 {% block content %}
-
 <section class="relative bg-gray-50">
 
   {# HERO #}
@@ -16,73 +15,470 @@
     </div>
   </div>
 
-  {# LISTA DE CATEGORIAS #}
-  <div x-data="{ modalOpen: null }" class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-24 py-16 grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+  {# FILTRO POR CATEGORIA #}
+{# FILTRO POR CATEGORIA COM SELECT #}
+<div class="max-w-8xl mx-auto px-6 sm:px-12 lg:px-24 py-12" x-data="{ filtro: 'todos', modal: null }">
+  <div class="flex justify-center mb-10">
+    <select x-model="filtro" class="px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring focus:border-blue-500">
+      <option value="todos">Todos</option>
+      <option value="cabos">Cabos de Aço</option>
+      <option value="lingas">Linga de Cabo</option>
+      <option value="acessorios">Acessórios</option>
+      <option value="dispositivos_amarração">Dispositivos de Amarração</option>
+      <option value="dispositivos_variados">Dispositivos Variados</option>
+      <option value="manilhas">Manilhas</option>
+      <option value="esticadores">Esticadores</option>
+      <option value="soquetes">Soquetes</option>
+      <option value="correntes">Correntes</option>
+      <option value="atracacao_fundeio">Atracação e Fundeio</option>
+      <option value="cordas">Cordas</option>
+      <option value="redes">Redes de Carga</option>
+      <option value="cintas_poliester">Cintas de Poliéster</option>
+    </select>
+  </div>
 
-    {% set categorias = [
-      {
-        'id': 'defensas',
-        'img': '/assets/defensas.jpg',
-        'title': 'Defensas Marítimas',
-        'produtos': ['Pneumáticas', 'Retangulares', 'Tipos “V”', 'Cilíndricas', 'Cônicas', 'Celulares', 'Espuma', 'Acessórios']
-      },
-      {
-        'id': 'cabosAmarracao',
-        'img': '/assets/cabos-amarracao.jpg',
-        'title': 'Cabos de Amarração',
-        'produtos': ['Poliéster', 'Poliamida', 'Polietileno', 'Polipropileno', 'HMPE / UHMWPE']
-      },
-      {
-        'id': 'cabosAco',
-        'img': '/assets/cabos-aco.jpg',
-        'title': 'Cabos de Aço',
-        'produtos': ['6 x 19', '6 x 36', 'Rotation Resistant']
-      },
-      {
-        'id': 'correntes',
-        'img': '/assets/correntes.jpg',
-        'title': 'Correntes e Acessórios',
-        'produtos': ['Grau 8', 'Grau 10', 'Grau 100', 'Grau Offshore', 'Acessórios']
-      }
-    ] %}
+    {# GRID DE CARDS #}
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
 
-    {% for categoria in categorias %}
-      <div @click="modalOpen='{{ categoria.id }}'" 
-           class="group cursor-pointer bg-white rounded-xl shadow-md overflow-hidden transition hover:-translate-y-1 hover:shadow-lg" 
-           data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
-
-        <img src="{{ categoria.img }}" alt="{{ categoria.title }}" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-gray-900 group-hover:text-[#00151a]">{{ categoria.title }}</h3>
-          <p class="text-gray-600 text-sm mt-2">Clique para ver os produtos</p>
-        </div>
+      {# CABOS #}
+      <div x-show="filtro==='todos' || filtro==='cabos'" class="bg-white rounded-xl shadow hover:-translate-y-1 transition p-8 cursor-pointer relative group" @click="modal='cabos'">
+        <img src="/assets/cabo.png" alt="Cabos de Aço" class="w-full h-40 object-cover rounded mb-4">
+        <h3 class="font-bold text-lg text-gray-900 mb-2">Cabos de Aço</h3>
+        <p class="text-gray-600 text-sm">Alta resistência, durabilidade e desempenho em ambientes marítimos.</p>
+        <span class="absolute bottom-4 right-4 text-[#00151a] text-sm font-semibold flex items-center gap-1 group-hover:underline">Ver produtos <i class="fa-solid fa-arrow-right"></i></span>
       </div>
 
-      {# MODAL #}
-      <div x-show="modalOpen === '{{ categoria.id }}'" 
-           class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4" 
-           x-transition>
-        <div class="bg-white rounded-xl max-w-2xl w-full p-8 relative overflow-y-auto max-h-[90vh]">
-          <button @click="modalOpen=null" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800">
-            <i class="fa-solid fa-xmark text-2xl"></i>
-          </button>
-          <img src="{{ categoria.img }}" alt="{{ categoria.title }}" class="w-full h-56 object-cover rounded mb-6">
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">{{ categoria.title }}</h3>
+      {# LINGAS #}
+      <div x-show="filtro==='todos' || filtro==='lingas'" class="bg-white rounded-xl shadow hover:-translate-y-1 transition p-8 cursor-pointer relative group" @click="modal='lingas'">
+        <img src="/assets/eslinga.png" alt="Linga de Cabo" class="w-full h-40 object-cover rounded mb-4">
+        <h3 class="font-bold text-lg text-gray-900 mb-2">Linga de Cabo</h3>
+        <p class="text-gray-600 text-sm">Montagens certificadas para içamento seguro e eficiente.</p>
+        <span class="absolute bottom-4 right-4 text-[#00151a] text-sm font-semibold flex items-center gap-1 group-hover:underline">Ver produtos <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
 
-          <ul class="grid sm:grid-cols-2 gap-4">
-            {% for produto in categoria.produtos %}
-              <li class="bg-gray-100 rounded-lg p-4 text-gray-700 font-medium hover:bg-gray-200 transition">
-                {{ produto }}
-              </li>
-            {% endfor %}
-          </ul>
+      {# ACESSÓRIOS #}
+      <div x-show="filtro==='todos' || filtro==='acessorios'" class="bg-white rounded-xl shadow hover:-translate-y-1 transition p-8 cursor-pointer relative group" @click="modal='acessorios'">
+        <img src="/assets/acessorios.jpg" alt="Acessórios" class="w-full h-40 object-cover rounded mb-4">
+        <h3 class="font-bold text-lg text-gray-900 mb-2">Acessórios para Cabos</h3>
+        <p class="text-gray-600 text-sm">Componentes essenciais para garantir segurança e confiabilidade.</p>
+        <span class="absolute bottom-4 right-4 text-[#00151a] text-sm font-semibold flex items-center gap-1 group-hover:underline">Ver produtos <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+
+      {# DISPOSITIVOS DE AMARRAÇÃO #}
+      <div x-show="filtro==='todos' || filtro==='dispositivos_amarração'" class="bg-white rounded-xl shadow hover:-translate-y-1 transition p-8 cursor-pointer relative group" @click="modal='dispositivos_amarração'">
+        <img src="/assets/dispositivos_amarração.jpg" alt="Dispositivos de Amarração" class="w-full h-40 object-cover rounded mb-4">
+        <h3 class="font-bold text-lg text-gray-900 mb-2">Dispositivos de Amarração</h3>
+        <p class="text-gray-600 text-sm">Fixadores robustos para estruturas marítimas e embarcações.</p>
+       <span class="absolute bottom-4 right-4 text-[#00151a] text-sm font-semibold flex items-center gap-1 group-hover:underline">Ver produtos <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+
+      {# DISPOSITIVOS VARIADOS #}
+      <div x-show="filtro==='todos' || filtro==='dispositivos_variados'" class="bg-white rounded-xl shadow hover:-translate-y-1 transition p-8 cursor-pointer relative group" @click="modal='dispositivos_variados'">
+        <img src="/assets/dispositivos_variados.jpg" alt="Dispositivos Variados" class="w-full h-40 object-cover rounded mb-4">
+        <h3 class="font-bold text-lg text-gray-900 mb-2">Dispositivos Variados</h3>
+        <p class="text-gray-600 text-sm">Equipamentos auxiliares para operações de carga, segurança e movimentação.</p>
+         <span class="absolute bottom-4 right-4 text-[#00151a] text-sm font-semibold flex items-center gap-1 group-hover:underline">Ver produtos <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+
+      {# MANILHAS #}
+      <div x-show="filtro==='todos' || filtro==='manilhas'" class="bg-white rounded-xl shadow hover:-translate-y-1 transition p-8 cursor-pointer relative group" @click="modal='manilhas'">
+        <img src="/assets/manilhas.jpg" alt="Manilhas" class="w-full h-40 object-cover rounded mb-4">
+        <h3 class="font-bold text-lg text-gray-900 mb-2">Manilhas</h3>
+        <p class="text-gray-600 text-sm">Conectores certificados para ambientes marítimos e industriais.</p>
+         <span class="absolute bottom-4 right-4 text-[#00151a] text-sm font-semibold flex items-center gap-1 group-hover:underline">Ver produtos <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+
+      {# ESTICADORES #}
+      <div x-show="filtro==='todos' || filtro==='esticadores'" class="bg-white rounded-xl shadow hover:-translate-y-1 transition p-8 cursor-pointer relative group" @click="modal='esticadores'">
+        <img src="/assets/esticadores.jpg" alt="Esticadores" class="w-full h-40 object-cover rounded mb-4">
+        <h3 class="font-bold text-lg text-gray-900 mb-2">Esticadores</h3>
+        <p class="text-gray-600 text-sm">Ajuste preciso de tensão em sistemas de amarração offshore.</p>
+         <span class="absolute bottom-4 right-4 text-[#00151a] text-sm font-semibold flex items-center gap-1 group-hover:underline">Ver produtos <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+
+      {# SOQUETES #}
+      <div x-show="filtro==='todos' || filtro==='soquetes'" class="bg-white rounded-xl shadow hover:-translate-y-1 transition p-8 cursor-pointer relative group" @click="modal='soquetes'">
+        <img src="/assets/soquetes.jpg" alt="Soquetes" class="w-full h-40 object-cover rounded mb-4">
+        <h3 class="font-bold text-lg text-gray-900 mb-2">Soquetes</h3>
+        <p class="text-gray-600 text-sm">Terminação segura e confiável para cabos em sistemas de içamento.</p>
+         <span class="absolute bottom-4 right-4 text-[#00151a] text-sm font-semibold flex items-center gap-1 group-hover:underline">Ver produtos <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+
+      {# CORRENTES #}
+      <div x-show="filtro==='todos' || filtro==='correntes'" class="bg-white rounded-xl shadow hover:-translate-y-1 transition p-8 cursor-pointer relative group" @click="modal='correntes'">
+        <img src="/assets/correntes.jpg" alt="Correntes" class="w-full h-40 object-cover rounded mb-4">
+        <h3 class="font-bold text-lg text-gray-900 mb-2">Correntes</h3>
+        <p class="text-gray-600 text-sm">Fundamentais para fundeio, sinalização e movimentação de cargas.</p>
+         <span class="absolute bottom-4 right-4 text-[#00151a] text-sm font-semibold flex items-center gap-1 group-hover:underline">Ver produtos <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+
+      {# ATRACAÇÃO E FUNDEIO #}
+      <div x-show="filtro==='todos' || filtro==='atracacao'" class="bg-white rounded-xl shadow hover:-translate-y-1 transition p-8 cursor-pointer relative group" @click="modal='atracacao_fundeio'">
+        <img src="/assets/atracacao.jpg" alt="Atracação e Fundeio" class="w-full h-40 object-cover rounded mb-4">
+        <h3 class="font-bold text-lg text-gray-900 mb-2">Atracação e Fundeio</h3>
+        <p class="text-gray-600 text-sm">Soluções completas para operações marítimas e offshore.</p>
+         <span class="absolute bottom-4 right-4 text-[#00151a] text-sm font-semibold flex items-center gap-1 group-hover:underline">Ver produtos <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+
+      {# CORDAS #}
+      <div x-show="filtro==='todos' || filtro==='cordas'" class="bg-white rounded-xl shadow hover:-translate-y-1 transition p-8 cursor-pointer relative group" @click="modal='cordas'">
+        <img src="/assets/cordas.jpg" alt="Cordas" class="w-full h-40 object-cover rounded mb-4">
+        <h3 class="font-bold text-lg text-gray-900 mb-2">Cordas</h3>
+        <p class="text-gray-600 text-sm">Amarração leve e resistente para uso em embarcações e plataformas.</p>
+         <span class="absolute bottom-4 right-4 text-[#00151a] text-sm font-semibold flex items-center gap-1 group-hover:underline">Ver produtos <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+
+      {# REDES DE CARGA #}
+      <div x-show="filtro==='todos' || filtro==='redes'" class="bg-white rounded-xl shadow hover:-translate-y-1 transition p-8 cursor-pointer relative group" @click="modal='redes'">
+        <img src="/assets/redes.jpg" alt="Redes de Carga" class="w-full h-40 object-cover rounded mb-4">
+        <h3 class="font-bold text-lg text-gray-900 mb-2">Redes de Carga</h3>
+        <p class="text-gray-600 text-sm">Transporte seguro de materiais em áreas offshore.</p>
+         <span class="absolute bottom-4 right-4 text-[#00151a] text-sm font-semibold flex items-center gap-1 group-hover:underline">Ver produtos <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+
+      {# CINTAS DE POLIÉSTER #}
+      <div x-show="filtro==='todos' || filtro==='cintas'" class="bg-white rounded-xl shadow hover:-translate-y-1 transition p-8 cursor-pointer relative group" @click="modal='cintas_poliester'">
+        <img src="/assets/cintas.jpg" alt="Cintas de Poliéster" class="w-full h-40 object-cover rounded mb-4">
+        <h3 class="font-bold text-lg text-gray-900 mb-2">Cintas de Poliéster</h3>
+        <p class="text-gray-600 text-sm">Içamento leve e seguro com alta resistência à abrasão.</p>
+         <span class="absolute bottom-4 right-4 text-[#00151a] text-sm font-semibold flex items-center gap-1 group-hover:underline">Ver produtos <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+
+    </div>
+
+    {# ========================= MODAIS COMPLETOS ========================= #}
+      {# ========================= MODAL - CABOS ========================= #}
+<div x-show="modal==='cabos'" x-transition @keydown.escape.window="modal=null" @click.self="modal=null" class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-2xl max-w-3xl w-full relative overflow-hidden">
+    <button @click="modal=null" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 z-10">
+      <i class="fa-solid fa-xmark text-2xl"></i>
+    </button>
+    <img src="/assets/cabo.png" alt="Cabos de Aço" class="w-full h-52 sm:h-64 object-cover">
+    <div class="p-6 sm:p-8 max-h-[75vh] overflow-y-auto">
+      <h3 class="text-2xl font-bold mb-2">Cabos de Aço</h3>
+      <p class="text-gray-600 mb-6">
+        Alta resistência, durabilidade e desempenho em ambientes marítimos exigentes.
+      </p>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="border rounded-xl p-4 hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900">Cabo 6x7 (Alma Fibra ou Aço)</h4>
+          <p class="text-sm text-gray-600 mt-1">Flexível e resistente, ideal para movimentações de convés.</p>
+        </div>
+        <div class="border rounded-xl p-4 hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900">Cabo Inox AISI 316 6x19</h4>
+          <p class="text-sm text-gray-600 mt-1">Alta resistência à corrosão para uso contínuo offshore.</p>
+        </div>
+        <div class="border rounded-xl p-4 hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900">Cabo 6x19 / 6x36</h4>
+          <p class="text-sm text-gray-600 mt-1">Versátil para guindastes, turcos e amarração.</p>
+        </div>
+        <div class="border rounded-xl p-4 hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900">Cabo Compactado 8P</h4>
+          <p class="text-sm text-gray-600 mt-1">Suporta cargas elevadas com menor deformação.</p>
+        </div>
+        <div class="border rounded-xl p-4 hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900">Cabo Não Rotativo 35x7</h4>
+          <p class="text-sm text-gray-600 mt-1">Içamentos verticais estáveis, sem torções.</p>
         </div>
       </div>
-    {% endfor %}
+    </div>
+  </div>
+</div>
+
+{# ========================= MODAL - LINGAS ========================= #}
+<div x-show="modal==='lingas'" x-transition @keydown.escape.window="modal=null" @click.self="modal=null" class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-2xl max-w-3xl w-full relative overflow-hidden">
+    <button @click="modal=null" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 z-10">
+      <i class="fa-solid fa-xmark text-2xl"></i>
+    </button>
+    <img src="/assets/eslinga.png" alt="Linga de Cabo" class="w-full h-52 sm:h-64 object-cover">
+    <div class="p-6 sm:p-8 max-h-[75vh] overflow-y-auto">
+      <h3 class="text-2xl font-bold mb-2">Linga de Cabo de Aço</h3>
+      <p class="text-gray-600 mb-6">Montagens certificadas para içamento seguro e eficiente.</p>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="border rounded-xl p-4 hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900">Modelos P-1 a P-9</h4>
+          <p class="text-sm text-gray-600 mt-1">Configurações para múltiplos ângulos e capacidades.</p>
+        </div>
+        <div class="border rounded-xl p-4 hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900">Linga de Pernas Múltiplas</h4>
+          <p class="text-sm text-gray-600 mt-1">1 a 4 pernas com ganchos, olhais ou manilhas.</p>
+        </div>
+        <div class="border rounded-xl p-4 hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900">Laços Portella</h4>
+          <p class="text-sm text-gray-600 mt-1">Reforçados para amarrações estruturais críticas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# ========================= MODAL - ACESSÓRIOS ========================= #}
+<div x-show="modal==='acessorios'" x-transition @keydown.escape.window="modal=null" @click.self="modal=null" class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-2xl max-w-3xl w-full relative overflow-hidden">
+    <button @click="modal=null" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 z-10">
+      <i class="fa-solid fa-xmark text-2xl"></i>
+    </button>
+    <img src="/assets/acessorios.jpg" alt="Acessórios" class="w-full h-52 sm:h-64 object-cover">
+    <div class="p-6 sm:p-8 max-h-[75vh] overflow-y-auto">
+      <h3 class="text-2xl font-bold mb-2">Acessórios para Cabos</h3>
+      <p class="text-gray-600 mb-6">Componentes que elevam a segurança e durabilidade dos sistemas de içamento.</p>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="border rounded-xl p-4 hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900">Grampos Leves/Pesados</h4>
+          <p class="text-sm text-gray-600 mt-1">Fixação segura; versões zincadas e inox.</p>
+        </div>
+        <div class="border rounded-xl p-4 hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900">Destorcedores e Olhais</h4>
+          <p class="text-sm text-gray-600 mt-1">Evitam torções e facilitam o manuseio.</p>
+        </div>
+        <div class="border rounded-xl p-4 hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900">Sapatilhas</h4>
+          <p class="text-sm text-gray-600 mt-1">Proteção contra atrito; leves, pesadas, reforçadas e inox.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# ========================= MODAL - DISPOSITIVOS DE AMARRAÇÃO ========================= #}
+<div x-show="modal==='dispositivos_amarração'" x-transition @keydown.escape.window="modal=null" @click.self="modal=null" class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-2xl max-w-3xl w-full relative overflow-hidden">
+    <button @click="modal=null" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 z-10">
+      <i class="fa-solid fa-xmark text-2xl"></i>
+    </button>
+    <img src="/assets/dispositivos_amarração.jpg" alt="Dispositivos de Amarração" class="w-full h-52 sm:h-64 object-cover">
+    <div class="p-6 sm:p-8 max-h-[75vh] overflow-y-auto">
+      <h3 class="text-2xl font-bold mb-2">Dispositivos de Amarração</h3>
+      <p class="text-gray-600 mb-6">Fixadores robustos para estruturas marítimas e embarcações.</p>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="border rounded-xl p-4 hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900">Padeye Tipo S</h4>
+          <p class="text-sm text-gray-600 mt-1">Elemento soldável para pontos de ancoragem, alta resistência mecânica.</p>
+        </div>
+        <div class="border rounded-xl p-4 hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900">Olhal Grau 8</h4>
+          <p class="text-sm text-gray-600 mt-1">Suporta grandes esforços em operações críticas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# ========================= MODAL - DISPOSITIVOS VARIADOS ========================= #}
+<div x-show="modal==='dispositivos_variados'" x-transition @keydown.escape.window="modal=null" @click.self="modal=null" class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-2xl max-w-3xl w-full relative overflow-hidden">
+    <button @click="modal=null" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 z-10">
+      <i class="fa-solid fa-xmark text-2xl"></i>
+    </button>
+    <img src="/assets/dispositivos_variados.jpg" alt="Dispositivos Variados" class="w-full h-52 sm:h-64 object-cover">
+    <div class="p-6 sm:p-8 max-h-[75vh] overflow-y-auto">
+      <h3 class="text-2xl font-bold mb-2">Dispositivos Variados</h3>
+      <p class="text-gray-600 mb-6">Equipamentos auxiliares para operações de carga, segurança e movimentação.</p>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="border rounded-xl p-4 hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900">Levantador Eletromagnético</h4>
+          <p class="text-sm text-gray-600 mt-1">Movimentação de chapas metálicas com segurança e agilidade.</p>
+        </div>
+        <div class="border rounded-xl p-4 hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900">Talhas e Tensionadores</h4>
+          <p class="text-sm text-gray-600 mt-1">Ferramentas de içamento e ajuste de tensão.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# ========================= MODAL - MANILHAS ========================= #}
+<div x-show="modal==='manilhas'" x-transition @keydown.escape.window="modal=null" @click.self="modal=null" class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-2xl max-w-3xl w-full relative overflow-hidden">
+    <button @click="modal=null" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 z-10">
+      <i class="fa-solid fa-xmark text-2xl"></i>
+    </button>
+    <img src="/assets/manilhas.jpg" alt="Manilhas" class="w-full h-52 sm:h-64 object-cover">
+    <div class="p-6 sm:p-8 max-h-[75vh] overflow-y-auto">
+      <h3 class="text-2xl font-bold mb-2">Manilhas</h3>
+      <p class="text-gray-600 mb-6">Conectores certificados para ambientes marítimos e industriais.</p>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="border rounded-xl p-4 hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900">Manilha Reta e Curva</h4>
+          <p class="text-sm text-gray-600 mt-1">Pino roscado ou porca/cupilha para conexões rápidas e seguras.</p>
+        </div>
+        <div class="border rounded-xl p-4 hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900">Manilha de Âncora e Chaveta</h4>
+          <p class="text-sm text-gray-600 mt-1">Alta resistência à tração e à corrosão, ideal para fundeio.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# ========================= MODAL - ESTICADORES ========================= #}
+<div x-show="modal==='esticadores'" x-transition @keydown.escape.window="modal=null" @click.self="modal=null" class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-2xl max-w-3xl w-full relative overflow-hidden">
+    <button @click="modal=null" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 z-10">
+      <i class="fa-solid fa-xmark text-2xl"></i>
+    </button>
+    <img src="/assets/esticadores.jpg" alt="Esticadores" class="w-full h-52 sm:h-64 object-cover">
+    <div class="p-6 sm:p-8 max-h-[75vh] overflow-y-auto">
+      <h3 class="text-2xl font-bold mb-2">Esticadores</h3>
+      <p class="text-gray-600 mb-6">Ajuste preciso de tensão em cabos e cordas em ambientes offshore.</p>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="border rounded-xl p-4 hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900">Modelos Gancho, Olhal, Manilha</h4>
+          <p class="text-sm text-gray-600 mt-1">Permitem regulagem segura, fabricados em aço galvanizado ou inox.</p>
+        </div>
+        <div class="border rounded-xl p-4 hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900">Esticadores de Alta Capacidade</h4>
+          <p class="text-sm text-gray-600 mt-1">Suportam grandes esforços em ambientes extremos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# ========================= MODAL - SOQUETES ========================= #}
+<div x-show="modal==='soquetes'" x-transition @keydown.escape.window="modal=null" @click.self="modal=null" class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-2xl max-w-3xl w-full relative overflow-hidden">
+    <button @click="modal=null" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 z-10">
+      <i class="fa-solid fa-xmark text-2xl"></i>
+    </button>
+    <img src="/assets/soquetes.jpg" alt="Soquetes" class="w-full h-52 sm:h-64 object-cover">
+    <div class="p-6 sm:p-8 max-h-[75vh] overflow-y-auto">
+      <h3 class="text-2xl font-bold mb-2">Soquetes</h3>
+      <p class="text-gray-600 mb-6">Terminação segura e confiável para cabos em sistemas de içamento.</p>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="border rounded-xl p-4 hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900">Soquete Aberto, Fechado, Tipo Pera</h4>
+          <p class="text-sm text-gray-600 mt-1">Para guindastes e sistemas de amarração, alta resistência.</p>
+        </div>
+        <div class="border rounded-xl p-4 hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900">Soquete de Cunha</h4>
+          <p class="text-sm text-gray-600 mt-1">Instalação rápida, ideal para operações offshore.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# ========================= MODAL - CORRENTES ========================= #}
+<div x-show="modal==='correntes'" x-transition @keydown.escape.window="modal=null" @click.self="modal=null" class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-2xl max-w-3xl w-full relative overflow-hidden">
+    <button @click="modal=null" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 z-10">
+      <i class="fa-solid fa-xmark text-2xl"></i>
+    </button>
+    <img src="/assets/correntes.jpg" alt="Correntes" class="w-full h-52 sm:h-64 object-cover">
+    <div class="p-6 sm:p-8 max-h-[75vh] overflow-y-auto">
+      <h3 class="text-2xl font-bold mb-2">Correntes</h3>
+      <p class="text-gray-600 mb-6">Fundamentais para fundeio, sinalização e movimentação de cargas.</p>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="border rounded-xl p-4 hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900">Corrente de Boia de Sinalização</h4>
+          <p class="text-sm text-gray-600 mt-1">Leve galvanizada para marcação marítima.</p>
+        </div>
+        <div class="border rounded-xl p-4 hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900">Corrente de Elos Soldados / Inox / Grau 8</h4>
+          <p class="text-sm text-gray-600 mt-1">Alta resistência à tração e à corrosão para cargas pesadas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# ========================= MODAL - ATRACACAO E FUNDEIO ========================= #}
+<div x-show="modal==='atracacao_fundeio'" x-transition @keydown.escape.window="modal=null" @click.self="modal=null" class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-2xl max-w-3xl w-full relative overflow-hidden">
+    <button @click="modal=null" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 z-10">
+      <i class="fa-solid fa-xmark text-2xl"></i>
+    </button>
+    <img src="/assets/atracacao_fundeio.jpg" alt="Atracação e Fundeio" class="w-full h-52 sm:h-64 object-cover">
+    <div class="p-6 sm:p-8 max-h-[75vh] overflow-y-auto">
+      <h3 class="text-2xl font-bold mb-2">Atracação e Fundeio</h3>
+      <p class="text-gray-600 mb-6">Soluções completas para operações marítimas e offshore.</p>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="border rounded-xl p-4 hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900">Corrente de Amarra, Elo Kenter, Tornel Swivel</h4>
+          <p class="text-sm text-gray-600 mt-1">Garantem segurança e estabilidade em qualquer fundo.</p>
+        </div>
+        <div class="border rounded-xl p-4 hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900">Âncoras e Chasers</h4>
+          <p class="text-sm text-gray-600 mt-1">Modelos variados para diferentes tipos de fundo e retenção.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# ========================= MODAL - CORDAS ========================= #}
+<div x-show="modal==='cordas'" x-transition @keydown.escape.window="modal=null" @click.self="modal=null" class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-2xl max-w-3xl w-full relative overflow-hidden">
+    <button @click="modal=null" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 z-10">
+      <i class="fa-solid fa-xmark text-2xl"></i>
+    </button>
+    <img src="/assets/cordas.jpg" alt="Cordas" class="w-full h-52 sm:h-64 object-cover">
+    <div class="p-6 sm:p-8 max-h-[75vh] overflow-y-auto">
+      <h3 class="text-2xl font-bold mb-2">Cordas</h3>
+      <p class="text-gray-600 mb-6">Amarração leve e resistente para embarcações e plataformas.</p>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="border rounded-xl p-4 hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900">Cordas Torcidas</h4>
+          <p class="text-sm text-gray-600 mt-1">Poliéster, polipropileno, sisal; resistentes à tração e umidade.</p>
+        </div>
+        <div class="border rounded-xl p-4 hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900">Cordas Trançadas HMPE</h4>
+          <p class="text-sm text-gray-600 mt-1">Alta performance com baixo peso, flexíveis e resistentes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# ========================= MODAL - REDES ========================= #}
+<div x-show="modal==='redes'" x-transition @keydown.escape.window="modal=null" @click.self="modal=null" class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-2xl max-w-3xl w-full relative overflow-hidden">
+    <button @click="modal=null" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 z-10">
+      <i class="fa-solid fa-xmark text-2xl"></i>
+    </button>
+    <img src="/assets/redes.jpg" alt="Redes de Carga" class="w-full h-52 sm:h-64 object-cover">
+    <div class="p-6 sm:p-8 max-h-[75vh] overflow-y-auto">
+      <h3 class="text-2xl font-bold mb-2">Redes de Carga</h3>
+      <p class="text-gray-600 mb-6">Transporte seguro de materiais em áreas offshore.</p>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="border rounded-xl p-4 hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900">Redes em Corda, Fita, Cabo de Aço</h4>
+          <p class="text-sm text-gray-600 mt-1">Modelos para diferentes tipos de carga, alta resistência.</p>
+        </div>
+        <div class="border rounded-xl p-4 hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900">Rede Helideck</h4>
+          <p class="text-sm text-gray-600 mt-1">Para movimentação segura de cargas por helicóptero.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# ========================= MODAL - CINTAS DE POLIESTER ========================= #}
+<div x-show="modal==='cintas_poliester'" x-transition @keydown.escape.window="modal=null" @click.self="modal=null" class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-2xl max-w-3xl w-full relative overflow-hidden">
+    <button @click="modal=null" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 z-10">
+      <i class="fa-solid fa-xmark text-2xl"></i>
+    </button>
+    <img src="/assets/cintas.jpg" alt="Cintas de Poliéster" class="w-full h-52 sm:h-64 object-cover">
+    <div class="p-6 sm:p-8 max-h-[75vh] overflow-y-auto">
+      <h3 class="text-2xl font-bold mb-2">Cintas de Poliéster</h3>
+      <p class="text-gray-600 mb-6">Içamento leve e seguro, alta resistência à abrasão.</p>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="border rounded-xl p-4 hover:shadow-md transition">
+          <h4 class="font-semibold text-gray-900">Cintas Tipo Sling, Catraca, Tubular</h4>
+          <p class="text-sm text-gray-600 mt-1">Flexíveis, resistentes e fáceis de manusear em convés e áreas industriais.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
   </div>
 </section>
 
-{# Alpine.js #}
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-
 {% endblock %}
