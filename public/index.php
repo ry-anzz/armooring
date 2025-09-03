@@ -41,4 +41,8 @@ $app->get('/post', function ($request, $response, $args) use ($twig) {
     return $twig->render($response, 'post.twig');
 });
 
+$app->get('/contato', function ($request, $response, $args) use ($twig) {
+    return $twig->render($response, 'contato.twig');
+});
+
 $app->run();
